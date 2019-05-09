@@ -9,12 +9,14 @@ export class RegistrationComponent implements OnInit {
 
   private _registerForm: FormGroup;
 
-  constructor() { }
+  constructor(private _form: FormBuilder) { 
+    this.createForm();
+  }
 
   ngOnInit() {
   }
   createForm() {
-    this._registerForm = this._registerForm.group({
+    this._registerForm = this._form.group({
       email: new FormControl,
       password: new FormControl,
       confirmPassword: new FormControl 
