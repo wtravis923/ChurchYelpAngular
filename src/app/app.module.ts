@@ -17,7 +17,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const routes = [
-  {path: 'register', component: RegistrationComponent}
+  {path: 'register', component: RegistrationComponent},
   {path: '***', component: RegistrationComponent}
 ];
 @NgModule({
