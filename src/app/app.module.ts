@@ -8,13 +8,18 @@ MatFormFieldModule,
 MatInputModule
 } from '@angular/material';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+import { AuthService } from './services/auth.service';
 import { RegistrationComponent } from './components/registration/registration.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     FormsModule,
     ReactiveFormsModule,
     RegistrationComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +29,11 @@ import { RegistrationComponent } from './components/registration/registration.co
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
