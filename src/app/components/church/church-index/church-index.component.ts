@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChurchService } from 'src/app/services/church.service';
+import { Church } from 'src/app/models/Church';
 
 @Component({
   selector: 'app-church-index',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChurchIndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _churchService: ChurchService) { }
 
   ngOnInit() {
+    this._churchService.getChurch().subscribe((church: Church[]) => {});
   }
-
 }
