@@ -22,7 +22,8 @@ import { Button } from 'protractor';
 const routes = [
   {path: 'register', component: RegistrationComponent},
   {path: '***', component: RegistrationComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'church', component: ChurchIndexComponent}
 ];
 
 // Removed forms module and reactive forms module from declarations.
