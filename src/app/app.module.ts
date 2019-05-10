@@ -17,6 +17,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ChurchService } from './services/church.service';
 import { ChurchIndexComponent } from './components/church/church-index/church-index.component';
+import { Button } from 'protractor';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
