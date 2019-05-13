@@ -29,17 +29,16 @@ import { ChurchDeleteComponent } from './components/church/church-delete/church-
 const routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'church', component: ChurchListItemComponent},
   {path: 'home', component: HomeComponent},
   {path: 'leader', component: LeaderListItemComponent},
   {path: '***', component: RegistrationComponent},
-  { path: 'churches', component:ChurchListItemComponent},
-  { path: 'churches/create', component: ChurchCreateComponent },
+  { path: 'church', component:ChurchListItemComponent},
+  { path: 'church/create', component: ChurchCreateComponent},
   { path: 'churches/detail/:id', component: ChurchDetailComponent},
   { path: 'churches/delete/:id', component: ChurchDeleteComponent}
+
 ];
 
-// Removed forms module and reactive forms module from declarations.
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +73,7 @@ const routes = [
     AuthService,
     ChurchService,
     LeaderService,
-    ChurchService
+    ChurchDetailComponent
   ],
 
   bootstrap: [AppComponent]
