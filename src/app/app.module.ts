@@ -19,6 +19,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { Button } from 'protractor';
 import { ChurchService } from './services/church.service';
+import { Button } from 'protractor';
 import { HomeComponent } from './components/home/home.component';
 import { LeaderService } from './services/leader.service';
 import { LeaderListItemComponent } from './components/leader/leader-listItem/leader-listItem.component';
@@ -52,11 +53,8 @@ const routes = [
     LeaderListItemComponent,
     ChurchCreateComponent,
     ChurchDetailComponent,
-
     ChurchEditComponent,
     ChurchDeleteComponent
-
-
   ],
   
   imports: [
