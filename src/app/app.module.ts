@@ -28,7 +28,7 @@ const routes = [
   {path: 'login', component: LoginComponent},
   {path: 'leader', component: LeaderListItemComponent},
   {path: '***', component: RegistrationComponent},
- 
+  {path: 'church', component: ChurchIndexComponent}
 ];
 
 // Removed forms module and reactive forms module from declarations.

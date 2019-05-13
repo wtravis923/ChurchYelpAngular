@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-const ApiUrl = 'https://churchyelpapi.azurewebsites.net/'
+const ApiUrl = 'https://churchyelpapi.azurewebsites.net'
 
 @Injectable({
   providedIn: 'root'
