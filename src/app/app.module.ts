@@ -33,11 +33,12 @@ const routes = [
   {path: 'leader', component: LeaderListItemComponent},
   {path: '***', component: RegistrationComponent},
   { path: 'church', component:ChurchListItemComponent},
-  { path: 'church/create', component: ChurchCreateComponent },
-  { path: 'church/detail/:id', component: ChurchDetailComponent}
+  { path: 'church/create', component: ChurchCreateComponent},
+  { path: 'churches/detail/:id', component: ChurchDetailComponent},
+  { path: 'churches/delete/:id', component: ChurchDeleteComponent}
+
 ];
 
-// Removed forms module and reactive forms module from declarations.
 @NgModule({
   declarations: [
     AppComponent,
