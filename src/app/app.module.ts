@@ -8,7 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatToolbarModule,
 MatButtonModule,
 MatFormFieldModule,
-MatInputModule
+MatInputModule,
+MatTableModule
 } from '@angular/material';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,12 +20,14 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ChurchService } from './services/church.service';
 import { ChurchIndexComponent } from './components/church/church-index/church-index.component';
 import { Button } from 'protractor';
+import { HomeComponent } from './components/home/home.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
   {path: '***', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'church', component: ChurchIndexComponent}
+  {path: 'church', component: ChurchIndexComponent},
+  {path: 'home', component: HomeComponent}
 ];
 
 // Removed forms module and reactive forms module from declarations.
@@ -34,7 +37,8 @@ const routes = [
     HeaderComponent,
     LoginComponent,
     RegistrationComponent,
-    ChurchIndexComponent
+    ChurchIndexComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ const routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     HttpClientModule
   ],
   providers: [

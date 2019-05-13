@@ -7,7 +7,10 @@ import { Observable, Subject } from 'rxjs';
 
 const Api_Url = 'https://churchyelpapi.azurewebsites.net'
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+
 export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
@@ -15,14 +18,14 @@ export class AuthService {
   constructor(private _http: HttpClient, private _router: Router) { }
 
   register(regUserData: RegisterUser) {
-    return this._http.post('${Api_Url}/api/Account/Register', regUserData);
+    return this._http.post(`${Api_Url}/api/Account/Register`, regUserData);
   }
 
   login(loginInfo) {
     const str =
     `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
     
-    return this._http.post('${Api_Url}/token', str).subscribe( (token: Token) => {localStorage.setItem('id_token', token.access_token)
+    return this._http.post(`${Api_Url}/token`, str).subscribe( (token: Token) => {localStorage.setItem('id_token', token.access_token)
     });
   }
 
