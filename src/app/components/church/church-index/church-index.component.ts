@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ChurchesService } from '../../../services/church.service';
 import { Church } from '../../../models/Church';
+import { ChurchService } from 'src/app/services/church.service';
+import { Church } from 'src/app/models/Church';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Church } from '../models/Church';
 
-const ApiUrl = '';
+const ApiUrl = 'https://churchyelpapi.azurewebsites.net/api'
 
 @Injectable()
 
@@ -25,5 +25,4 @@ export class ChurchesService {
 
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
-  }
 }

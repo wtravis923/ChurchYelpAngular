@@ -1,11 +1,9 @@
 <h1>Index</h1>
-<a mat-raised-button color="primary" routerLink="/churches/create">Create New</a>
-<hr>
 <div>
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
-    
+
     <ng-container matColumnDef="details">
         <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
         <mat-cell *matCellDef="let church" routerLink="/churches/detail/{{church.ChurchId}}"> 
