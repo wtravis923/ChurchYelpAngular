@@ -1,10 +1,38 @@
 <h1>Index</h1>
-<a mat-raised-button color="primary">Create New</a>
-<hr>
-
 <div>
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="details">
+        <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+        <mat-cell *matCellDef="let church" routerLink="/churches/detail/{{church.ChurchId}}"> 
+          <i class="material-icons">library_books</i></mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="ChurchId">
+        <mat-header-cell *matHeaderCellDef> Church ID </mat-header-cell>
+        <mat-cell *matCellDef="let church"> {{church.ChurchId}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="ChurchName">
+        <mat-header-cell *matHeaderCellDef> ChurchName </mat-header-cell>
+        <mat-cell *matCellDef="let church"> {{church.ChurchName}} </mat-cell>
+      </ng-container>
+        
+      <ng-container matColumnDef="ChurchCity">
+          <mat-header-cell *matHeaderCellDef> ChurchCity </mat-header-cell>
+          <mat-cell *matCellDef="let church"> {{church.ChurchCity}} </mat-cell>
+        </ng-container>
+      <ng-container matColumnDef="ChurchState">
+          <mat-header-cell *matHeaderCellDef> ChurchState </mat-header-cell>
+          <mat-cell *matCellDef="let church"> {{church.ChurchState}} </mat-cell>
+        </ng-container>
+      <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let church">
+          <i mat-icon class="material-icons" routerLink="/churches/edit/{{church.ChurchId}}">edit</i>
+          <i class="material-icons" routerLink="/churches/delete/{{church.ChurchId}}">delete</i>
+        </mat-cell>
+      </ng-container>
   </mat-table>
 </div>

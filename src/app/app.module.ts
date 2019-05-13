@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from'@angular/forms';
+import { NgModule } from '@angular/core';
+import { ChurchesService } from './services/church.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from'@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MatToolbarModule,
 MatButtonModule,
@@ -17,11 +19,14 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ChurchService } from './services/church.service';
-import { ChurchIndexComponent } from './components/church/church-index/church-index.component';
 import { Button } from 'protractor';
 import { HomeComponent } from './components/home/home.component';
 import { LeaderService } from './services/leader.service';
 import { LeaderListItemComponent } from './components/leader/leader-listItem/leader-listItem.component';
+import { ChurchIndexComponent } from './components/church/church-index/church-index.component';
+import { ChurchCreateComponent } from './components/church/church-create/church-create.component';
+import { ChurchDetailComponent } from './components/church/church-detail/church-detail.component';
+import { ChurchEditComponent } from './components/church/church-edit/church-edit.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
@@ -30,6 +35,9 @@ const routes = [
   {path: 'home', component: HomeComponent}
   {path: 'leader', component: LeaderListItemComponent},
   {path: '***', component: RegistrationComponent},
+  { path: 'churches', component:ChurchIndexComponent},
+  { path: 'churches/create', component: ChurchCreateComponent },
+  { path: 'churches/detail/:id', component: ChurchDetailComponent}
 ];
 
 // Removed forms module and reactive forms module from declarations.
@@ -40,8 +48,12 @@ const routes = [
     LoginComponent,
     RegistrationComponent,
     ChurchIndexComponent,
-    HomeComponent
-    LeaderListItemComponent
+    HomeComponent,
+    LeaderListItemComponent,
+    ChurchCreateComponent,
+    ChurchDetailComponent,
+    ChurchEditComponent
+  
   ],
   
   imports: [
@@ -62,8 +74,12 @@ const routes = [
   providers: [
     AuthService,
     ChurchService,
-    LeaderService
+    LeaderService,
+    ChurchesService
   ],
+
   bootstrap: [AppComponent]
+  
 })
+
 export class AppModule { }
