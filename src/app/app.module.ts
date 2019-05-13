@@ -8,7 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatToolbarModule,
 MatButtonModule,
 MatFormFieldModule,
-MatInputModule
+MatInputModule,
+MatTableModule
 } from '@angular/material';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,11 +20,14 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ChurchService } from './services/church.service';
 import { ChurchIndexComponent } from './components/church/church-index/church-index.component';
 import { Button } from 'protractor';
+import { LeaderService } from './services/leader.service';
+import { LeaderListItemComponent } from './components/leader/leader-listItem/leader-listItem.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
-  {path: '***', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'leader', component: LeaderListItemComponent},
+  {path: '***', component: RegistrationComponent},
   {path: 'church', component: ChurchIndexComponent}
 ];
 
@@ -34,7 +38,8 @@ const routes = [
     HeaderComponent,
     LoginComponent,
     RegistrationComponent,
-    ChurchIndexComponent
+    ChurchIndexComponent,
+    LeaderListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -48,11 +53,13 @@ const routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     HttpClientModule
   ],
   providers: [
     AuthService,
-    ChurchService
+    ChurchService,
+    LeaderService
   ],
   bootstrap: [AppComponent]
 })
