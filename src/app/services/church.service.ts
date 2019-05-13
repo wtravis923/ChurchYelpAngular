@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-const ApiUrl = 'https://churchyelpapi.azurewebsites.net'
+const ApiUrl = 'https://churchyelpapi.azurewebsites.net/api'
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+
 export class ChurchService {
 
   constructor(private _http: HttpClient) { }

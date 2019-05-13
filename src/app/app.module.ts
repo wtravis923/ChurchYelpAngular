@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from'@angular/forms';
@@ -20,15 +19,17 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ChurchService } from './services/church.service';
 import { ChurchIndexComponent } from './components/church/church-index/church-index.component';
 import { Button } from 'protractor';
+import { HomeComponent } from './components/home/home.component';
 import { LeaderService } from './services/leader.service';
 import { LeaderListItemComponent } from './components/leader/leader-listItem/leader-listItem.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'church', component: ChurchIndexComponent},
+  {path: 'home', component: HomeComponent}
   {path: 'leader', component: LeaderListItemComponent},
   {path: '***', component: RegistrationComponent},
-  {path: 'church', component: ChurchIndexComponent}
 ];
 
 // Removed forms module and reactive forms module from declarations.
@@ -39,8 +40,10 @@ const routes = [
     LoginComponent,
     RegistrationComponent,
     ChurchIndexComponent,
+    HomeComponent
     LeaderListItemComponent
   ],
+  
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
