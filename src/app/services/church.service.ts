@@ -6,7 +6,7 @@ const ApiUrl = 'https://churchyelpapi.azurewebsites.net/api'
 
 @Injectable()
 
-export class ChurchesService {
+export class ChurchService {
 
   constructor(private _http: HttpClient) { }
 
@@ -15,9 +15,6 @@ export class ChurchesService {
   }
   createChurch(church: Church) {
     return this._http.post(`${ApiUrl}/Church`, church, { headers: this.getHeaders()});
-  }
-  getChurch(id: string) {
-    return this._http.get(`${ApiUrl}/Churches/${id}`, { headers: this.getHeaders()});
   }
   updateChurch(church: Church) {
     return this._http.put(`${ApiUrl}/Churches`, church, { headers: this.getHeaders()});
