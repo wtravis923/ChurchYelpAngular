@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ChurchesService } from './services/church.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from'@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +17,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { Button } from 'protractor';
 import { ChurchService } from './services/church.service';
 import { Button } from 'protractor';
 import { HomeComponent } from './components/home/home.component';
@@ -33,7 +33,7 @@ const routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'church', component: ChurchIndexComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
   {path: 'leader', component: LeaderListItemComponent},
   {path: '***', component: RegistrationComponent},
   { path: 'churches', component:ChurchIndexComponent},
@@ -55,7 +55,6 @@ const routes = [
     ChurchDetailComponent,
     ChurchEditComponent,
     ChurchDeleteComponent
-  
   ],
   
   imports: [
