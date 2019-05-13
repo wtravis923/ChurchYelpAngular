@@ -6,11 +6,11 @@ import { Church } from 'src/app/models/Church';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
-  selector: 'app-church-index',
-  templateUrl: './church-index.component.html',
-  styleUrls: ['./church-index.component.css']
+  selector: 'app-church-List-Item',
+  templateUrl: './church-List-Item.component.html',
+  styleUrls: ['./church-List-Item.component.css']
 })
-export class ChurchIndexComponent implements OnInit {
+export class ChurchListItemComponent implements OnInit {
 
   constructor(private _churchService: ChurchesService) { }
 

@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ChurchesService } from './services/church.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from'@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +21,7 @@ import { Button } from 'protractor';
 import { HomeComponent } from './components/home/home.component';
 import { LeaderService } from './services/leader.service';
 import { LeaderListItemComponent } from './components/leader/leader-listItem/leader-listItem.component';
-import { ChurchIndexComponent } from './components/church/church-index/church-index.component';
+import { ChurchListItemComponent } from './components/church/church-ListItem/church-ListItem.component';
 import { ChurchCreateComponent } from './components/church/church-create/church-create.component';
 import { ChurchDetailComponent } from './components/church/church-detail/church-detail.component';
 import { ChurchEditComponent } from './components/church/church-edit/church-edit.component';
@@ -31,11 +29,11 @@ import { ChurchEditComponent } from './components/church/church-edit/church-edit
 const routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'church', component: ChurchIndexComponent},
+  {path: 'church', component: ChurchListItemComponent},
   {path: 'home', component: HomeComponent}
   {path: 'leader', component: LeaderListItemComponent},
   {path: '***', component: RegistrationComponent},
-  { path: 'churches', component:ChurchIndexComponent},
+  { path: 'churches', component:ChurchListItemComponent},
   { path: 'churches/create', component: ChurchCreateComponent },
   { path: 'churches/detail/:id', component: ChurchDetailComponent}
 ];
@@ -47,7 +45,7 @@ const routes = [
     HeaderComponent,
     LoginComponent,
     RegistrationComponent,
-    ChurchIndexComponent,
+    ChurchListItemComponent,
     HomeComponent,
     LeaderListItemComponent,
     ChurchCreateComponent,
@@ -75,7 +73,7 @@ const routes = [
     AuthService,
     ChurchService,
     LeaderService,
-    ChurchesService
+    ChurchService
   ],
 
   bootstrap: [AppComponent]
