@@ -16,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { Button } from 'protractor';
 import { ChurchService } from './services/church.service';
 import { Button } from 'protractor';
 import { HomeComponent } from './components/home/home.component';
@@ -25,6 +26,7 @@ import { ChurchListItemComponent } from './components/church/church-ListItem/chu
 import { ChurchCreateComponent } from './components/church/church-create/church-create.component';
 import { ChurchDetailComponent } from './components/church/church-detail/church-detail.component';
 import { ChurchEditComponent } from './components/church/church-edit/church-edit.component';
+import { ChurchDeleteComponent } from './components/church/church-delete/church-delete.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
@@ -50,8 +52,8 @@ const routes = [
     LeaderListItemComponent,
     ChurchCreateComponent,
     ChurchDetailComponent,
-    ChurchEditComponent
-  
+    ChurchEditComponent,
+    ChurchDeleteComponent
   ],
   
   imports: [
