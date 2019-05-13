@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Leader } from '../models/Leader';
 
 const ApiUrl = 'https://churchyelp.azurewebsites.net/api';
 
@@ -12,6 +13,10 @@ export class LeaderService {
 
   getLeader(){
     return this._http.get(`${ApiUrl}/Leader`, {headers: this.getHeaders() });
+  }
+
+  createLeader(leader: Leader) {
+    return this._http.post(`${ApiUrl}/Leaders`, leader, {headers: this.getHeaders()});
   }
 
   private getHeaders() {

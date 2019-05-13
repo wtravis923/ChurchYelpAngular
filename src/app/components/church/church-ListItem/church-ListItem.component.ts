@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ChurchesService } from '../../../services/church.service';
+import { ChurchService } from '../../../services/church.service';
 import { Church } from '../../../models/Church';
-import { ChurchService } from 'src/app/services/church.service';
-import { Church } from 'src/app/models/Church';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
@@ -12,10 +10,10 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class ChurchListItemComponent implements OnInit {
 
-  constructor(private _churchService: ChurchesService) { }
+  constructor(private _churchService: ChurchService) { }
 
   ngOnInit() {
-    this. _churchService.getChurches().subscribe((churches: Church[]) => {
+    this. _churchService.getChurch().subscribe((churches: Church[]) => {
       this.dataSource = new MatTableDataSource<Church>(churches);
     });
   }
