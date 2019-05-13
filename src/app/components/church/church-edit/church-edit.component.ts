@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Church } from 'src/app/models/Church';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { ChurchesService } from 'src/app/services/church.service';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { ChurchService } from 'src/app/services/church.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ church: Church;
 
 editChurchForm: FormGroup;
   constructor(private _form: FormBuilder,
-    private _churchService: ChurchesService,
+    private _churchService: ChurchService,
     private _ar: ActivatedRoute,
     private _router: Router
     ) { 
@@ -24,10 +24,30 @@ editChurchForm: FormGroup;
           this.church = singleChurch;
           this.createForm();
         });
-      }):
+      });
     }
 
   ngOnInit() {
+  }
+
+  createForm() {
+    this.editChurchForm = this._form.group({
+      ChurchId: new FormControl(this.church.ChurchId),
+      ChurchName: new FormControl(this.church.ChurchName),
+      ChurchCity: new FormControl(this.church.ChurchCity),
+      ChurchState: new FormControl(this.church.ChurchState)
+    });
+  }
+
+  onSubmit(form) {
+    const updateChurch: Church = {
+      ChurchId: form.value.ChurchId,
+      ChurchName: form.value.ChurchName,
+      ChurchCity: form.value.ChurchCity,
+      ChurchState: form.value.ChurchState
+    };
+    this._churchService.updateChurch(updateChurch).subscribe(d => {this._router.navigate(['/church']);
+  })
   }
 
 }

@@ -16,9 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { Button } from 'protractor';
 import { ChurchService } from './services/church.service';
-import { Button } from 'protractor';
 import { HomeComponent } from './components/home/home.component';
 import { LeaderService } from './services/leader.service';
 import { LeaderListItemComponent } from './components/leader/leader-listItem/leader-listItem.component';
@@ -31,13 +29,12 @@ import { ChurchDeleteComponent } from './components/church/church-delete/church-
 const routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'church', component: ChurchListItemComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
   {path: 'leader', component: LeaderListItemComponent},
   {path: '***', component: RegistrationComponent},
-  { path: 'churches', component:ChurchListItemComponent},
-  { path: 'churches/create', component: ChurchCreateComponent },
-  { path: 'churches/detail/:id', component: ChurchDetailComponent}
+  { path: 'church', component:ChurchListItemComponent},
+  { path: 'church/create', component: ChurchCreateComponent },
+  { path: 'church/detail/:id', component: ChurchDetailComponent}
 ];
 
 // Removed forms module and reactive forms module from declarations.
@@ -75,7 +72,7 @@ const routes = [
     AuthService,
     ChurchService,
     LeaderService,
-    ChurchService
+    ChurchDetailComponent
   ],
 
   bootstrap: [AppComponent]
