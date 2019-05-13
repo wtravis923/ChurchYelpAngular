@@ -25,4 +25,6 @@ export class ChurchesService {
 
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+  }
 }
+
