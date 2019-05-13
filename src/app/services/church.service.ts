@@ -10,7 +10,7 @@ export class ChurchService {
 
   constructor(private _http: HttpClient) { }
 
-  getChurches () {
+  getChurch () {
     return this._http.get(`${ApiUrl}/Church`, { headers: this.getHeaders()});
   }
   createChurch(church: Church) {
