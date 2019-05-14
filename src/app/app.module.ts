@@ -11,6 +11,7 @@ import {
   MatInputModule,
   MatTableModule
 } from '@angular/material';
+import { MatSelectModule } from '@angular/material/select';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
@@ -28,6 +29,7 @@ import { ChurchDetailComponent } from './components/church/church-detail/church-
 import { ChurchEditComponent } from './components/church/church-edit/church-edit.component';
 import { ChurchDeleteComponent } from './components/church/church-delete/church-delete.component';
 import { LeaderCreateComponent } from './components/leader-create/leader-create.component';
+import { ChurchRatingCreateComponent } from './components/churchRating/church-rating-create/church-rating-create.component';
 import { LeaderratingIndexComponent } from './components/leaderrating/leaderrating-index/leaderrating-index.component';
 import { LeaderratingCreateComponent } from './components/leaderrating/leaderrating-create/leaderrating-create.component';
 import { LeaderratingDetailComponent } from './components/leaderrating/leaderrating-detail/leaderrating-detail.component';
@@ -36,18 +38,27 @@ import { LeaderratingEditComponent } from './componenets/leaderrating/leaderrati
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'leader', component: LeaderListItemComponent },
-  { path: 'church', component: ChurchListItemComponent },
-  { path: 'church/create', component: ChurchCreateComponent },
-  { path: 'church/detail/:id', component: ChurchDetailComponent },
-  { path: 'church/:id', component: ChurchDeleteComponent },
-  { path: 'church/edit/:id', component: ChurchEditComponent },
   { path: '**', component: HomeComponent },
   { path: 'leader/create', component: LeaderCreateComponent },
   { path: 'leaderrating', component: LeaderratingIndexComponent },
   { path: 'leaderrating / create', component: LeaderratingIndexComponent },
   { path: 'leaderrating /: id' , component: LeaderratingIndexComponent },
-
+  { path: 'register', component: RegistrationComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'leader', children: [
+    { path: '', component: LeaderListItemComponent},
+    { path: 'leader/create', component:LeaderCreateComponent},
+  ]},
+  { path: 'church', children: [
+    { path: '', component: ChurchListItemComponent},
+    { path: 'create', component: ChurchCreateComponent},
+    { path: 'detail/:id', component: ChurchDetailComponent},
+    { path: ':id', component: ChurchDeleteComponent},
+    { path: 'edit/:id', component: ChurchEditComponent},
+  ]},
+  { path: 'churchRating', children: [
+    { path: 'create', component: ChurchRatingCreateComponent}
+  ]},
 ];
 
 @NgModule({
@@ -67,6 +78,8 @@ const routes = [
     LeaderratingCreateComponent,
     LeaderratingDetailComponent,
     LeaderratingEditComponent
+    ChurchRatingCreateComponent
+    LeaderratingIndexComponent
   ],
 
   imports: [
@@ -82,7 +95,8 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ],
   providers: [
     AuthService,
