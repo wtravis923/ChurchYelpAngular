@@ -18,7 +18,7 @@ export class ChurchDeleteComponent implements OnInit {
       });
     });
    }
-
+  
   ngOnInit() {
   }
 
