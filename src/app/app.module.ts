@@ -29,6 +29,9 @@ import { ChurchDetailComponent } from './components/church/church-detail/church-
 import { ChurchEditComponent } from './components/church/church-edit/church-edit.component';
 import { ChurchDeleteComponent } from './components/church/church-delete/church-delete.component';
 import { LeaderCreateComponent } from './components/leader-create/leader-create.component';
+import { LeaderDetailComponent } from './components/leader/leader-detail/leader-detail.component';
+import { LeaderEditComponent } from './components/leader/leader-edit/leader-edit.component';
+import { LeaderDeleteComponent } from './components/leader/leader-delete/leader-delete.component';
 import { ChurchRatingCreateComponent } from './components/churchRating/church-rating-create/church-rating-create.component';
 import { LeaderratingIndexComponent } from './components/leaderrating/leaderrating-index/leaderrating-index.component';
 import { LeaderratingCreateComponent } from './components/leaderrating/leaderrating-create/leaderrating-create.component';
@@ -43,18 +46,29 @@ const routes = [
   { path: 'leaderrating', component: LeaderratingIndexComponent },
   { path: 'leaderrating / create', component: LeaderratingIndexComponent },
   { path: 'leaderrating /: id' , component: LeaderratingIndexComponent },
-  { path: 'register', component: RegistrationComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'leader', component: LeaderListItemComponent },
+  { path: 'leader/detail', component: LeaderDetailComponent },
+  { path: 'leader/edit', component: LeaderEditComponent },
+  { path: 'leader/delete', component: LeaderDeleteComponent },
+  { path: 'church', component:ChurchListItemComponent },
+  { path: 'church/create', component: ChurchCreateComponent },
+  { path: 'church/detail/:id', component: ChurchDetailComponent },
+  { path: 'church/:id', component: ChurchDeleteComponent },
+  { path: 'church/edit/:id', component: ChurchEditComponent },
+  { path: '**', component: HomeComponent },
+  { path: 'leader/create', component:LeaderCreateComponent },
   { path: 'leader', children: [
-    { path: '', component: LeaderListItemComponent},
-    { path: 'leader/create', component:LeaderCreateComponent},
+    { path: '', component: LeaderListItemComponent },
+    { path: 'leader/create', component:LeaderCreateComponent },
   ]},
   { path: 'church', children: [
-    { path: '', component: ChurchListItemComponent},
-    { path: 'create', component: ChurchCreateComponent},
-    { path: 'detail/:id', component: ChurchDetailComponent},
-    { path: ':id', component: ChurchDeleteComponent},
-    { path: 'edit/:id', component: ChurchEditComponent},
+    { path: '', component: ChurchListItemComponent },
+    { path: 'create', component: ChurchCreateComponent },
+    { path: 'detail/:id', component: ChurchDetailComponent },
+    { path: ':id', component: ChurchDeleteComponent },
+    { path: 'edit/:id', component: ChurchEditComponent },
   ]},
   { path: 'churchRating', children: [
     { path: 'create', component: ChurchRatingCreateComponent}
@@ -75,6 +89,9 @@ const routes = [
     ChurchEditComponent,
     ChurchDeleteComponent,
     LeaderCreateComponent,
+    LeaderDetailComponent,
+    LeaderEditComponent,
+    LeaderDeleteComponent
     LeaderratingCreateComponent,
     LeaderratingDetailComponent,
     LeaderratingEditComponent
