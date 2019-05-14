@@ -17,6 +17,7 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ChurchService } from './services/church.service';
+import { ChurchRatingsService} from './services/churchratings.service';
 import { HomeComponent } from './components/home/home.component';
 import { LeaderService } from './services/leader.service';
 import { LeaderListItemComponent } from './components/leader/leader-listItem/leader-listItem.component';
@@ -38,7 +39,7 @@ const routes = [
   { path: 'church/:id', component: ChurchDeleteComponent},
   { path: 'church/edit/:id', component: ChurchEditComponent},
   { path: '**', component: HomeComponent},
-  {path: 'leader/create', component:LeaderCreateComponent},
+  { path: 'leader/create', component:LeaderCreateComponent},
 ];
 
 @NgModule({
@@ -76,8 +77,10 @@ const routes = [
   providers: [
     AuthService,
     ChurchService,
+    ChurchRatingsService,
     LeaderService,
     ChurchDetailComponent
+
   ],
 
   bootstrap: [AppComponent]
