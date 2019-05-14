@@ -5,11 +5,11 @@
 <div>
   <mat-table #table [dataSource] = "dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: colimnNames;"></mat-row>
-  </mat-table>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+  
 
   <ng-container matColumnDef="LeaderID">
-    <mat-header-cell *matHeaderCellDef> Leader #</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> Leader ID</mat-header-cell>
     <mat-cell *matCellDef="let Leader">{{leader.LeaderID}}</mat-cell>
   </ng-container>
 
@@ -22,4 +22,20 @@
     <mat-header-cell *matHeaderCellDef>Leader Name</mat-header-cell>
   <mat-cell *matCellDf="let Leader">{{leader.LeaderName}}</mat-cell>
   </ng-container>
+
+  <ng-container matColumnDef="buttons">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let leader">
+      <i mat-icon class="material-icons" routerLink="/leader/edit/{{leader.LeaderID}}">edit</i>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="buttons">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let leader">
+      <i mat-icon class="material-icons" routerLink="/leader/edit/{{leader.LeaderID}}">edit</i>
+      <i class="material-icons" routerLink="/leader/delete/{{leader.LeaderID}}">delete</i>
+    </mat-cell>
+
+  </ng-container>
+  </mat-table>
 </div>

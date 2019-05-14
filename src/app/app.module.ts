@@ -28,12 +28,16 @@ import { ChurchEditComponent } from './components/church/church-edit/church-edit
 import { ChurchDeleteComponent } from './components/church/church-delete/church-delete.component';
 import { LeaderCreateComponent } from './components/leader-create/leader-create.component';
 import { LeaderDetailComponent } from './components/leader/leader-detail/leader-detail.component';
+import { LeaderEditComponent } from './components/leader/leader-edit/leader-edit.component';
+import { LeaderDeleteComponent } from './components/leader/leader-delete/leader-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent},
   { path: 'leader', component: LeaderListItemComponent},
-  {path: 'leader', component: LeaderDetailComponent},
+  {path: 'leader/detail', component: LeaderDetailComponent},
+  {path: 'leader/edit', component: LeaderEditComponent},
+  {path: 'leader/delete', component: LeaderDeleteComponent},
   { path: 'church', component:ChurchListItemComponent},
   { path: 'church/create', component: ChurchCreateComponent},
   { path: 'church/detail/:id', component: ChurchDetailComponent},
@@ -57,7 +61,9 @@ const routes = [
     ChurchEditComponent,
     ChurchDeleteComponent,
     LeaderCreateComponent,
-    LeaderDetailComponent
+    LeaderDetailComponent,
+    LeaderEditComponent,
+    LeaderDeleteComponent
   ],
   
   imports: [
