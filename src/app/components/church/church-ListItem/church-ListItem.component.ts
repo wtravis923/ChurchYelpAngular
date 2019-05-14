@@ -17,6 +17,6 @@ export class ChurchListItemComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Church>(church);
     });
   }
-  columnNames =['ChurchId', 'ChurchName', 'ChurchCity', 'ChurchState', 'buttons', 'details'];
+  columnNames =['ChurchName', 'ChurchCity', 'ChurchState', 'FriendlyRating', 'CommunityInvolvementRating', 'FacilityRating', 'MusicRating', 'MessageRating', 'buttons',];
   dataSource: MatTableDataSource<Church>
 }

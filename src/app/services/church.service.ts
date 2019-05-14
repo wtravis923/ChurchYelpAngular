@@ -26,6 +26,10 @@ export class ChurchService {
     return this._http.put(`${ApiUrl}/Church`, church, { headers: this.getHeaders()});
   }
 
+  deleteChurch(id: number) {
+    return this._http.delete(`${ApiUrl}/Church/${id}`, { headers: this.getHeaders() });
+  }
+
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }

@@ -28,16 +28,16 @@ import { ChurchDeleteComponent } from './components/church/church-delete/church-
 import { LeaderCreateComponent } from './components/leader-create/leader-create.component';
 
 const routes = [
-  {path: 'register', component: RegistrationComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'leader', component: LeaderListItemComponent},
-  {path: 'leader/create', component:LeaderCreateComponent},
-  {path: '***', component: RegistrationComponent},
+  { path: 'register', component: RegistrationComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'leader', component: LeaderListItemComponent},
   { path: 'church', component:ChurchListItemComponent},
   { path: 'church/create', component: ChurchCreateComponent},
-  { path: 'churches/:id', component: ChurchDetailComponent},
-  { path: 'churches/delete/:id', component: ChurchDeleteComponent}
+  { path: 'church/detail/:id', component: ChurchDetailComponent},
+  { path: 'church/:id', component: ChurchDeleteComponent},
+  { path: 'church/edit/:id', component: ChurchEditComponent},
+  { path: '**', component: HomeComponent},
+  {path: 'leader/create', component:LeaderCreateComponent},
 ];
 
 @NgModule({

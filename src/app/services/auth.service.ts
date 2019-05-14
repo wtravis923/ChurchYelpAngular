@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { RegisterUser } from '../models/RegisterUser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Token } from '../models/Token';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
 const Api_Url = 'https://churchyelpapi.azurewebsites.net'
@@ -25,7 +25,9 @@ export class AuthService {
     const str =
     `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
     
-    return this._http.post(`${Api_Url}/token`, str).subscribe( (token: Token) => {localStorage.setItem('id_token', token.access_token)
+    return this._http.post(`${Api_Url}/token`, str).subscribe( (token: Token) => {localStorage.setItem('id_token', token.access_token);
+    this.isLoggedIn.next(true);
+    this._router.navigate(['']);
     });
   }
 
