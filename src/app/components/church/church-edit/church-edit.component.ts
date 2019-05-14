@@ -20,7 +20,7 @@ editChurchForm: FormGroup;
     private _router: Router
     ) { 
       this._ar.paramMap.subscribe(p => {
-        this._churchService.getChurch(p.get('id')).subscribe((singleChurch: Church) =>{
+        this._churchService.getChurches(p.get('id')).subscribe((singleChurch: Church) =>{
           this.church = singleChurch;
           this.createForm();
         });
@@ -29,13 +29,13 @@ editChurchForm: FormGroup;
 
   ngOnInit() {
   }
-  createForm(){
+  
+  createForm() {
     this.editChurchForm = this._form.group({
       ChurchId: new FormControl(this.church.ChurchId),
-      ChurchName : new FormControl(this.church.ChurchName),
+      ChurchName: new FormControl(this.church.ChurchName),
       ChurchCity: new FormControl(this.church.ChurchCity),
       ChurchState: new FormControl(this.church.ChurchState)
-
     });
   }
 
@@ -47,9 +47,7 @@ editChurchForm: FormGroup;
       ChurchState: form.value.ChurchState
     };
 
-    this._churchService.updateChurch(updateChurch).subscribe(d => {
-      this._router.navigate(['/church']);
-    })
+    this._churchService.updateChurch(updateChurch).subscribe(d => {this._router.navigate(['/church']);
+  })
   }
-
 }

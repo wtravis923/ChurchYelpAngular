@@ -27,7 +27,7 @@ createForm() {
 }
 onSubmit() {
   this._churchService.createChurch(this.churchForm.value).subscribe(data => {
-    this._router.navigate(['/churches']);
+    this._router.navigate(['/church']);
   });
 }
 }

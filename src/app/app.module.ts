@@ -30,17 +30,16 @@ import { LeaderCreateComponent } from './components/leader-create/leader-create.
 const routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'church', component: ChurchListItemComponent},
   {path: 'home', component: HomeComponent},
   {path: 'leader', component: LeaderListItemComponent},
   {path: 'leader/create', component:LeaderCreateComponent},
   {path: '***', component: RegistrationComponent},
   { path: 'church', component:ChurchListItemComponent},
-  { path: 'church/create', component: ChurchCreateComponent },
-  { path: 'church/:id', component: ChurchDetailComponent}
+  { path: 'church/create', component: ChurchCreateComponent},
+  { path: 'churches/:id', component: ChurchDetailComponent},
+  { path: 'churches/delete/:id', component: ChurchDeleteComponent}
 ];
 
-// Removed forms module and reactive forms module from declarations.
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,7 +75,7 @@ const routes = [
     AuthService,
     ChurchService,
     LeaderService,
-  
+    ChurchDetailComponent
   ],
 
   bootstrap: [AppComponent]

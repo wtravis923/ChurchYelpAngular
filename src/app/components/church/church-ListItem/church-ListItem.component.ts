@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { ChurchService } from '../../../services/church.service';
 import { Church } from '../../../models/Church';
+import { ChurchService } from 'src/app/services/church.service';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
-  selector: 'app-church-List-Item',
-  templateUrl: './church-List-Item.component.html',
-  styleUrls: ['./church-List-Item.component.css']
+  selector: 'app-church-ListItem',
+  templateUrl: './church-ListItem.component.html',
+  styleUrls: ['./church-ListItem.component.css']
 })
 export class ChurchListItemComponent implements OnInit {
 
   constructor(private _churchService: ChurchService) { }
 
   ngOnInit() {
-    this. _churchService.getChurch().subscribe((churches: Church[]) => {
-      this.dataSource = new MatTableDataSource<Church>(churches);
+    this. _churchService.getChurches().subscribe((church: Church[]) => {
+      this.dataSource = new MatTableDataSource<Church>(church);
     });
   }
-  columnNames =['details', 'ChurchId', 'ChurchName', 'ChurchCity', 'ChurchState', 'buttons'];
+  columnNames =['ChurchId', 'ChurchName', 'ChurchCity', 'ChurchState', 'buttons', 'details'];
   dataSource: MatTableDataSource<Church>
 }
