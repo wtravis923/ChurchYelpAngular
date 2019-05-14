@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChurchService } from 'src/app/services/church.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Church } from 'src/app/models/Church';
 
 @Component({
@@ -9,6 +9,7 @@ import { Church } from 'src/app/models/Church';
   styleUrls: ['./church-delete.component.css']
 })
 export class ChurchDeleteComponent implements OnInit {
+  church: Church
 
   constructor(private _churchService: ChurchService, private _ar: ActivatedRoute, private _router: Router) {
     this._ar.paramMap.subscribe(p => {
@@ -22,7 +23,7 @@ export class ChurchDeleteComponent implements OnInit {
   }
 
   onDelete() {
-    this._churchService.deleteChurch(this._churchService.ChurchId).subscribe(() => {
+    this._churchService.deleteChurch(this.church.ChurchId).subscribe(() => {
       this._router.navigate(['/church']);
     });
   }

@@ -20,7 +20,7 @@ editChurchForm: FormGroup;
     private _router: Router
     ) { 
       this._ar.paramMap.subscribe(p => {
-        this._churchService.getChurches(p.get('id')).subscribe((singleChurch: Church) =>{
+        this._churchService.getChurch(p.get('id')).subscribe((singleChurch: Church) =>{
           this.church = singleChurch;
           this.createForm();
         });

@@ -13,7 +13,7 @@ export class ChurchService {
   constructor(private _http: HttpClient) { }
 
   getChurches () {
-    return this._http.get(`${ApiUrl}/Church`, { headers: this.getChurches() });
+    return this._http.get(`${ApiUrl}/Church`, { headers: this.getHeaders() });
   }
 
   getChurch (id: string) {
@@ -25,6 +25,10 @@ export class ChurchService {
   }
   updateChurch(church: Church) {
     return this._http.put(`${ApiUrl}/Church`, church, { headers: this.getHeaders()});
+  }
+
+  deleteChurch(id: number) {
+    return this._http.delete(`${ApiUrl}/Church/${id}`, { headers: this.getHeaders() });
   }
 
   private getHeaders() {
