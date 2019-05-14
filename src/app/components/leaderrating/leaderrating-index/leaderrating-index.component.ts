@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaderratingService } from 'src/app/services/leaderrating.service';
 import { LeaderRating } from '../../../models/leaderrating';
+import { MatTableDataSource } from '@angular/material';
 
 
 @Component({
@@ -14,7 +15,9 @@ export class LeaderratingIndexComponent implements OnInit {
 
   ngOnInit() {
     this._leaderratingService.getLeaderRating().subscribe((leaderrating: LeaderRating[]) => {
-
+        this.dataSource = new MatTableDataSource<LeaderRating>(leaderrating)
     });
   }
+  columnNames = ['LeaderId', 'LeaderRatingId', 'UserId', 'SpeakingAbilityRating', 'EngagingRating', 'AuthenticRating', 'RapportRating', 'buttons'];
+  dataSource: MatTableDataSource<LeaderRating>
 }

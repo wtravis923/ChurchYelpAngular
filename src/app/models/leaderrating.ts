@@ -1,6 +1,6 @@
 export interface LeaderRating {
     LeaderId?: number;
-    LeaderRatingid?: number;
+    LeaderRatingId?: number;
     UserId?: number;
     SpeakingAbilityRating?: number;
     EngagingRating?: number;

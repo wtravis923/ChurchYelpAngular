@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { LeaderRating } from '../models/leaderrating';
 
 
 const ApiUrl = 'https://churchyelp.azurewebsites.net/api';
@@ -9,8 +10,20 @@ export class LeaderratingService {
 
   constructor(private _http: HttpClient) { }
 
-  getLeaderRating() {
+  createLeaderRating(leaderrating: LeaderRating) {
+    return this._http.post(`${ApiUrl}/Leaderratings`, leaderrating, { headers: this.getHeaders()});
+  }
+
+  getLeaderRatings() {
     return this._http.get(`${ApiUrl}/LeaderRatings`, {headers: this.getHeaders() });
+  }
+
+  getLeaderRating(id: string) {
+    return this._http.get(`${ApiUrl}/LeaderRatings/${id}`, { headers: this.getHeaders() });
+  }
+
+  updateLeaderRating(leaderrating: LeaderRating) {
+    return this._http.put(`${ApiUrl}/LeaderRatings`, leaderrating, { headers: this.getHeaders() });
   }
 
   private getHeaders() {
