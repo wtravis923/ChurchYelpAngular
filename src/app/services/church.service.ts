@@ -13,12 +13,11 @@ export class ChurchService {
   constructor(private _http: HttpClient) { }
 
   getChurches () {
-    return this._http.get(`${ApiUrl}/Church`, { headers: this.getChurches() });
+    return this._http.get(`${ApiUrl}/Church`, { headers: this.getHeaders() });
   }
 
   getChurch (id: string) {
     return this._http.get(`${ApiUrl}/Church/${id}`, { headers: this.getHeaders() });
-
   }
   createChurch(church: Church) {
     return this._http.post(`${ApiUrl}/Church`, church, { headers: this.getHeaders()});

@@ -25,18 +25,19 @@ import { ChurchCreateComponent } from './components/church/church-create/church-
 import { ChurchDetailComponent } from './components/church/church-detail/church-detail.component';
 import { ChurchEditComponent } from './components/church/church-edit/church-edit.component';
 import { ChurchDeleteComponent } from './components/church/church-delete/church-delete.component';
+import { LeaderCreateComponent } from './components/leader-create/leader-create.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'leader', component: LeaderListItemComponent},
+  {path: 'leader/create', component:LeaderCreateComponent},
   {path: '***', component: RegistrationComponent},
   { path: 'church', component:ChurchListItemComponent},
   { path: 'church/create', component: ChurchCreateComponent},
-  { path: 'churches/detail/:id', component: ChurchDetailComponent},
+  { path: 'churches/:id', component: ChurchDetailComponent},
   { path: 'churches/delete/:id', component: ChurchDeleteComponent}
-
 ];
 
 @NgModule({
@@ -51,7 +52,8 @@ const routes = [
     ChurchCreateComponent,
     ChurchDetailComponent,
     ChurchEditComponent,
-    ChurchDeleteComponent
+    ChurchDeleteComponent,
+    LeaderCreateComponent
   ],
   
   imports: [
