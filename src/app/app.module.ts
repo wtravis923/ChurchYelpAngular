@@ -2,13 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from'@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { MatToolbarModule,
-MatButtonModule,
-MatFormFieldModule,
-MatInputModule,
-MatTableModule,
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatTableModule
 } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ChurchService } from './services/church.service';
 import { HomeComponent } from './components/home/home.component';
 import { LeaderService } from './services/leader.service';
+import { LeaderRating } from './services/leaderrating.service';
 import { LeaderListItemComponent } from './components/leader/leader-listItem/leader-listItem.component';
 import { ChurchListItemComponent } from './components/church/church-ListItem/church-ListItem.component';
 import { ChurchCreateComponent } from './components/church/church-create/church-create.component';
@@ -29,8 +31,18 @@ import { ChurchDeleteComponent } from './components/church/church-delete/church-
 import { LeaderCreateComponent } from './components/leader-create/leader-create.component';
 import { ChurchRatingCreateComponent } from './components/churchRating/church-rating-create/church-rating-create.component';
 import { LeaderratingIndexComponent } from './components/leaderrating/leaderrating-index/leaderrating-index.component';
+import { LeaderratingCreateComponent } from './components/leaderrating/leaderrating-create/leaderrating-create.component';
+import { LeaderratingDetailComponent } from './components/leaderrating/leaderrating-detail/leaderrating-detail.component';
+import { LeaderratingEditComponent } from './componenets/leaderrating/leaderrating-edit/leaderrating-edit.component';
 
 const routes = [
+  { path: 'register', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: HomeComponent },
+  { path: 'leader/create', component: LeaderCreateComponent },
+  { path: 'leaderrating', component: LeaderratingIndexComponent },
+  { path: 'leaderrating / create', component: LeaderratingIndexComponent },
+  { path: 'leaderrating /: id' , component: LeaderratingIndexComponent },
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent},
   { path: 'leader', children: [
@@ -44,7 +56,6 @@ const routes = [
     { path: ':id', component: ChurchDeleteComponent},
     { path: 'edit/:id', component: ChurchEditComponent},
   ]},
-  { path: '**', component: HomeComponent},
   { path: 'churchRating', children: [
     { path: 'create', component: ChurchRatingCreateComponent}
   ]},
@@ -64,10 +75,13 @@ const routes = [
     ChurchEditComponent,
     ChurchDeleteComponent,
     LeaderCreateComponent,
+    LeaderratingCreateComponent,
+    LeaderratingDetailComponent,
+    LeaderratingEditComponent
     ChurchRatingCreateComponent
     LeaderratingIndexComponent
   ],
-  
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -88,12 +102,13 @@ const routes = [
     AuthService,
     ChurchService,
     LeaderService,
+    LeaderRating,
     ChurchDetailComponent
 
   ],
 
   bootstrap: [AppComponent]
-  
+
 })
 
 export class AppModule { }
