@@ -18,7 +18,6 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ChurchService } from './services/church.service';
-import { ChurchRatingsService} from './services/churchratings.service';
 import { HomeComponent } from './components/home/home.component';
 import { LeaderService } from './services/leader.service';
 import { LeaderListItemComponent } from './components/leader/leader-listItem/leader-listItem.component';
@@ -29,6 +28,7 @@ import { ChurchEditComponent } from './components/church/church-edit/church-edit
 import { ChurchDeleteComponent } from './components/church/church-delete/church-delete.component';
 import { LeaderCreateComponent } from './components/leader-create/leader-create.component';
 import { ChurchRatingCreateComponent } from './components/churchRating/church-rating-create/church-rating-create.component';
+import { LeaderratingIndexComponent } from './components/leaderrating/leaderrating-index/leaderrating-index.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
@@ -65,6 +65,7 @@ const routes = [
     ChurchDeleteComponent,
     LeaderCreateComponent,
     ChurchRatingCreateComponent
+    LeaderratingIndexComponent
   ],
   
   imports: [
@@ -86,7 +87,6 @@ const routes = [
   providers: [
     AuthService,
     ChurchService,
-    ChurchRatingsService,
     LeaderService,
     ChurchDetailComponent
 
