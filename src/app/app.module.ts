@@ -33,6 +33,7 @@ const routes = [
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent},
   { path: 'leader', component: LeaderListItemComponent},
+  {path: 'leader', component: LeaderDetailComponent},
   { path: 'church', component:ChurchListItemComponent},
   { path: 'church/create', component: ChurchCreateComponent},
   { path: 'church/detail/:id', component: ChurchDetailComponent},
