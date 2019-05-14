@@ -35,10 +35,9 @@ editChurchForm: FormGroup;
       ChurchName: new FormControl(this.church.ChurchName),
       ChurchCity: new FormControl(this.church.ChurchCity),
       ChurchState: new FormControl(this.church.ChurchState)
-
-
     });
   }
+
   onSubmit(form) {
     const updateChurch: Church = {
       ChurchId: form.value.ChurchId,
@@ -46,5 +45,8 @@ editChurchForm: FormGroup;
       ChurchCity: form.value.ChurchCity,
       ChurchState: form.value.ChurchState
     };
+
+    this._churchService.updateChurch(updateChurch).subscribe(d => {this._router.navigate(['/church']);
+  })
   }
 }

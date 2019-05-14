@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Church } from 'src/app/models/Church';
-import { ChurchesService } from 'src/app/services/church.service';
+import { ChurchService } from 'src/app/services/church.service';
 
 @Component({
   selector: 'app-church-detail',
@@ -10,7 +10,7 @@ import { ChurchesService } from 'src/app/services/church.service';
 })
 export class ChurchDetailComponent implements OnInit {
   church: Church;
-  constructor(private _activatedRoute: ActivatedRoute, private _churchService: ChurchesService) { }
+  constructor(private _activatedRoute: ActivatedRoute, private _churchService: ChurchService) { }
 
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe(routeData => {
