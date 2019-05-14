@@ -19,6 +19,10 @@ export class LeaderService {
     return this._http.post(`${ApiUrl}/Leaders`, leader, {headers: this.getHeaders()});
   }
 
+  getLocaleDayPeriods(id: string){
+    return this._http.get(`${ApiUrl}/Leaders/${id}`, {headers: this.getHeaders()});
+  }
+
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem(`id_token`)}`);
   }

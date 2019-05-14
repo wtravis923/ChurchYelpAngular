@@ -1,3 +1,25 @@
-<p>
-  leader-index works!
-</p>
+<h1>Index</h1>
+<a mat-raised-button color="primary">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource] = "dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: colimnNames;"></mat-row>
+  </mat-table>
+
+  <ng-container matColumnDef="LeaderID">
+    <mat-header-cell *matHeaderCellDef> Leader #</mat-header-cell>
+    <mat-cell *matCellDef="let Leader">{{leader.LeaderID}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="details">
+    <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+    <mat-cell *matCellDef="let leader"><i class="materical-icons">library_books</i></mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="LeaderName">
+    <mat-header-cell *matHeaderCellDef>Leader Name</mat-header-cell>
+  <mat-cell *matCellDf="let Leader">{{leader.LeaderName}}</mat-cell>
+  </ng-container>
+</div>

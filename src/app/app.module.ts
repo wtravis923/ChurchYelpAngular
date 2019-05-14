@@ -26,6 +26,7 @@ import { ChurchDetailComponent } from './components/church/church-detail/church-
 import { ChurchEditComponent } from './components/church/church-edit/church-edit.component';
 import { ChurchDeleteComponent } from './components/church/church-delete/church-delete.component';
 import { LeaderCreateComponent } from './components/leader-create/leader-create.component';
+import { LeaderDetailComponent } from './components/leader/leader-detail/leader-detail.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
@@ -53,7 +54,8 @@ const routes = [
     ChurchDetailComponent,
     ChurchEditComponent,
     ChurchDeleteComponent,
-    LeaderCreateComponent
+    LeaderCreateComponent,
+    LeaderDetailComponent
   ],
   
   imports: [
