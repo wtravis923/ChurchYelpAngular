@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {
   MatToolbarModule,
   MatButtonModule,
+  MatSliderModule,
+  MatSlideToggleModule,
   MatFormFieldModule,
   MatInputModule,
   MatTableModule
@@ -105,6 +107,8 @@ const routes = [
     RouterModule.forRoot(routes),
     RouterModule,
     ReactiveFormsModule,
+    MatSliderModule,
+    MatSlideToggleModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
