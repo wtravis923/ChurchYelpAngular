@@ -32,6 +32,7 @@ import { LeaderratingIndexComponent } from './components/leaderrating/leaderrati
 import { LeaderratingCreateComponent } from './components/leaderrating/leaderrating-create/leaderrating-create.component';
 import { LeaderratingDetailComponent } from './components/leaderrating/leaderrating-detail/leaderrating-detail.component';
 import { LeaderratingEditComponent } from './componenets/leaderrating/leaderrating-edit/leaderrating-edit.component';
+import { LeaderratingDeleteComponent } from './components/leaderrating/leaderrating-delete/leaderrating-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -47,6 +48,7 @@ const routes = [
   { path: 'leaderrating', component: LeaderratingIndexComponent },
   { path: 'leaderrating / create', component: LeaderratingIndexComponent },
   { path: 'leaderrating /: id' , component: LeaderratingIndexComponent },
+  { path: 'delete/: id', componenet: LeaderratingDeleteComponent}
 
 ];
 
@@ -66,7 +68,8 @@ const routes = [
     LeaderCreateComponent,
     LeaderratingCreateComponent,
     LeaderratingDetailComponent,
-    LeaderratingEditComponent
+    LeaderratingEditComponent,
+    LeaderratingDeleteComponent
   ],
 
   imports: [

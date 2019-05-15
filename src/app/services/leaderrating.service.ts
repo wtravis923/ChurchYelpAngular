@@ -25,6 +25,9 @@ export class LeaderratingService {
   updateLeaderRating(leaderrating: LeaderRating) {
     return this._http.put(`${ApiUrl}/LeaderRatings`, leaderrating, { headers: this.getHeaders() });
   }
+  deleteLeaderRating(id: number) {
+    return this._http.delete(`${ApiUrl}/Leaderratings/${id}`,{ headers: this.getHeaders()});
+  }
 
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer $(localStorage.getItem('id_token')}`);
