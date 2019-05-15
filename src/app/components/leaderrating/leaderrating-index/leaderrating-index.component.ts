@@ -14,7 +14,7 @@ export class LeaderratingIndexComponent implements OnInit {
   constructor(private _leaderratingService: LeaderratingService) { }
 
   ngOnInit() {
-    this._leaderratingService.getLeaderRating().subscribe((leaderrating: LeaderRating[]) => {
+    this._leaderratingService.getLeaderRatings().subscribe((leaderrating: LeaderRating[]) => {
         this.dataSource = new MatTableDataSource<LeaderRating>(leaderrating)
     });
   }
