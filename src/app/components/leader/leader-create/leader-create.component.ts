@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LeaderService} from '../../services/leader.service';
+import { LeaderService} from '../../../services/leader.service';
 import {FormBuilder, FormGroup, FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
 

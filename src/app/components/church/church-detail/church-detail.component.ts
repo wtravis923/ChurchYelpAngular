@@ -16,7 +16,7 @@ export class ChurchDetailComponent implements OnInit {
     this._activatedRoute.paramMap.subscribe(routeData => {
       this._churchService.getChurch(routeData.get('id')).subscribe((singleChurch: Church) => {
         this.church = singleChurch;
-      })
+      });
     });
   }
 }

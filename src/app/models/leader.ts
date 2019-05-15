@@ -1,7 +1,5 @@
 export interface Leader {
     LeaderID: number;
-    UserID: number;
+    UserID?: number;
     LeaderName: string;
-    
-    
 }
