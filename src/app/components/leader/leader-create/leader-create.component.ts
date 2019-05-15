@@ -20,15 +20,20 @@ export class LeaderCreateComponent implements OnInit {
   }
 
   createForm () {
-    this._leaderService.createLeader(this.leaderForm.value).subscribe(data => {
-      this._router.navigate(['/leaders']);
-    })
+   this.leaderForm = this._form.group ({
+    LeaderName: new FormControl,
+    SpeakingAbilityRating: new FormControl,
+    EngagingRating: new FormControl,
+    AuthenticRating: new FormControl,
+    RapportRating: new FormControl
+   });
+    
   }
 
   onSubmit() {
     this._leaderService.createLeader(this.leaderForm.value).subscribe(data => {
-      this._router.navigate(['/leaders']);
-    })
+      this._router.navigate(['/leader']);
+    });
   }
 
 }
