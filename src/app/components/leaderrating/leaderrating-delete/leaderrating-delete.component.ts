@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaderratingService } from 'src/app/services/leaderrating.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LeaderRating } from 'src/app/models/leaderrating';
 
 @Component({
@@ -8,13 +8,13 @@ import { LeaderRating } from 'src/app/models/leaderrating';
   templateUrl: './leaderrating-delete.component.html',
   styleUrls: ['./leaderrating-delete.component.css']
 })
-export class LeaderratingDeleteComponent implements OnInit {
-
+export class LeaderRatingDeleteComponent implements OnInit {
+  leaderrating: LeaderRating;
   constructor(private _leaderratingService: LeaderratingService, private _ar: ActivatedRoute, private _router: Router) { 
     this._ar.paramMap.subscribe(p => {
-      this._leaderratingService.getLeaderRating(p.get('id').subscribe((singleLeaderRating: LeaderRating) => {
+      this._leaderratingService.getLeaderRating(p.get('id')).subscribe((singleLeaderRating: LeaderRating) => {
         this.leaderrating = singleLeaderRating;
-      }));
+      });
     });
   }
 
@@ -22,7 +22,7 @@ export class LeaderratingDeleteComponent implements OnInit {
   }
 
   onDelete() {
-    this._leaderratingService.updateLeaderRating(this._leaderrating.LeaderId).sibscribe(() => {
+    this._leaderratingService.deleteLeaderRating(this.leaderrating.LeaderId).subscribe(() => {
       this._router.navigate(['/leaderratings']);
     });
   }
