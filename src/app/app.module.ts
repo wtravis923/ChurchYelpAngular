@@ -36,6 +36,8 @@ import { ChurchRatingCreateComponent } from './components/churchRating/church-ra
 import { LeaderratingIndexComponent } from './components/leaderrating/leaderrating-index/leaderrating-index.component';
 import { LeaderratingCreateComponent } from './components/leaderrating/leaderrating-create/leaderrating-create.component';
 import { LeaderratingDetailComponent } from './components/leaderrating/leaderrating-detail/leaderrating-detail.component';
+import { LeaderratingEditComponent } from './componenets/leaderrating/leaderrating-edit/leaderrating-edit.component';
+import { LeaderratingDeleteComponent } from './components/leaderrating/leaderrating-delete/leaderrating-delete.component';
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
 
 const routes = [
@@ -89,15 +91,17 @@ const routes = [
     ChurchDetailComponent,
     ChurchEditComponent,
     ChurchDeleteComponent,
+    ChurchRatingCreateComponent,
     LeaderCreateComponent,
     LeaderDetailComponent,
     LeaderEditComponent,
     LeaderDeleteComponent,
     LeaderratingCreateComponent,
     LeaderratingDetailComponent,
-    LeaderRatingEditComponent,
-    ChurchRatingCreateComponent,
+    LeaderratingEditComponent,
+    LeaderratingDeleteComponent
     LeaderratingIndexComponent
+
   ],
 
   imports: [
