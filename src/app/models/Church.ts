@@ -1,5 +1,5 @@
 export interface Church {
-    ChurchId?: number;
+    ChurchID?: number;
     OwnerId?: number;
     ChurchName: string;
     ChurchCity: string;

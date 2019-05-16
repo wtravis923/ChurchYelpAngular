@@ -1,23 +1,20 @@
 <h1>Create a Leader Rating.</h1>
 <hr>
 
+
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="noteForm">
   <div>
+    
     <div>
       <mat-form-field>
         <input matInput placeholder="LeaderId" formControlName="LeaderId" type="LeaderId" required />
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field>
-        <input matInput placeholder="LeaderRatingId" formControlName="LeaderRatingId" type="LeaderRatingId" required />
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="SpeakingAbilityRating" formControlName="SpeakingAbilityRating"
-          type="SpeakingAbilityRating" required />
-      </mat-form-field>
+      
+        <!-- <input matInput placeholder="SpeakingAbilityRating" 
+        type="SpeakingAbilityRating" required />
+      </mat-form-field>-->
     </div>
     <div>
       <mat-form-field>
@@ -27,7 +24,7 @@
     <div>
       <mat-form-field>
         <input matInput placeholder="AuthenticRating" formControlName="AuthenticRating" type="AuthenticRating"
-          required />
+        required />
       </mat-form-field>
     </div>
     <div>
@@ -37,6 +34,11 @@
     </div>
   </div>
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Leader Rating</button>
+  <!-- <div>
+    <mat-form-field>
+      <input matInput placeholder="" formControlName="LeaderRatingId" type="LeaderRatingId" required />
+    </mat-form-field>
+  </div> -->
 </form>
 
 <a mat-button routerLink="/leaderrating">Back to List</a>
