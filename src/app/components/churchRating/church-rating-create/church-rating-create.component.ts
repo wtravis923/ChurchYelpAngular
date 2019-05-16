@@ -12,7 +12,7 @@ export class ChurchRatingCreateComponent implements OnInit {
 
   churchRatingForm: FormGroup;
 
-  constructor(private _churchRatingService: ChurchRatingsService, private _form: FormBuilder, private _router: Router) { this.createForm() };
+  constructor(private _churchRatingService: ChurchRatingsService, private _form: FormBuilder, private _router: Router) { this.createForm(); }
 
   ngOnInit() {
   }

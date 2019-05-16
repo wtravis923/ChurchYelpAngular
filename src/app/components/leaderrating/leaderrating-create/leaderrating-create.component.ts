@@ -30,8 +30,10 @@ export class LeaderratingCreateComponent implements OnInit {
     RapportRating: new FormControl,
     });
   }
+
+  columnNames = ['ChurchRatingID', 'UserID', 'ChurchID', 'CommunityInvolvementRating', 'FriendlyRating', 'FacilityRating', 'MusicRating', 'MessageRating']
   onSubmit() {
-    this._leaderratingService.createLeaderRating(this.leaderratingForm.value).subscribe(date => {
+    this._leaderratingService.createLeaderRating(this.leaderratingForm.value).subscribe(data => {
       this._router.navigate(['/leaderratings']);
     });
   }

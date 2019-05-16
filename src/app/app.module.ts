@@ -19,6 +19,7 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ChurchService } from './services/church.service';
+import { ChurchRatingsService } from './services/churchratings.service'
 import { HomeComponent } from './components/home/home.component';
 import { LeaderService } from './services/leader.service';
 import { LeaderratingService } from './services/leaderrating.service';
@@ -32,6 +33,7 @@ import { LeaderCreateComponent } from './components/leader/leader-create/leader-
 import { LeaderDetailComponent } from './components/leader/leader-detail/leader-detail.component';
 import { LeaderEditComponent } from './components/leader/leader-edit/leader-edit.component';
 import { LeaderDeleteComponent } from './components/leader/leader-delete/leader-delete.component';
+import { ChurchRatingIndexComponent } from './components/churchRating/church-rating-index/church-rating-index.component';
 import { ChurchRatingCreateComponent } from './components/churchRating/church-rating-create/church-rating-create.component';
 import { LeaderratingIndexComponent } from './components/leaderrating/leaderrating-index/leaderrating-index.component';
 import { LeaderratingCreateComponent } from './components/leaderrating/leaderrating-create/leaderrating-create.component';
@@ -63,14 +65,16 @@ const routes = [
       { path: '', component: ChurchListItemComponent },
       { path: 'create', component: ChurchCreateComponent },
       { path: 'detail/:id', component: ChurchDetailComponent },
-      { path: ':id', component: ChurchDeleteComponent },
+      { path: 'delete/:id', component: ChurchDeleteComponent },
       { path: 'edit/:id', component: ChurchEditComponent },
     ]
   },
 
   {
     path: 'churchRating', children: [
+      { path: '', component: ChurchRatingIndexComponent },
       { path: 'create', component: ChurchRatingCreateComponent }
+
     ]
   },
   { path: '**', component: HomeComponent },
@@ -97,7 +101,8 @@ const routes = [
     LeaderratingDetailComponent,
     LeaderRatingEditComponent,
     ChurchRatingCreateComponent,
-    LeaderratingIndexComponent
+    LeaderratingIndexComponent,
+    ChurchRatingIndexComponent
   ],
 
   imports: [
@@ -119,10 +124,10 @@ const routes = [
   providers: [
     AuthService,
     ChurchService,
+    ChurchRatingsService,
     LeaderService,
     LeaderratingService,
     ChurchDetailComponent
-
   ],
 
   bootstrap: [AppComponent]

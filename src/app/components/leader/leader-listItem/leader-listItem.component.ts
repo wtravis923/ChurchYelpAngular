@@ -17,6 +17,6 @@ export class LeaderListItemComponent implements OnInit {
      this.dataSource = new MatTableDataSource<Leader>(leader);
     });
   }
-columnNames = [ 'LeaderName',];
+columnNames = [ 'LeaderName' ];
 dataSource: MatTableDataSource<Leader>
 }
