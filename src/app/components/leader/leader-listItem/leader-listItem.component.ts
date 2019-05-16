@@ -18,7 +18,7 @@ export class LeaderListItemComponent implements OnInit {
     });
   }
 
-columnNames = [ 'LeaderName','SpeakingAbilityRating','EngagingRating', 'AuthenticRating','RapportRating', 'buttons',];
+columnNames = ['LeaderID', 'LeaderName','SpeakingAbilityRating','EngagingRating', 'AuthenticRating','RapportRating', 'buttons',];
 
 dataSource: MatTableDataSource<Leader>
 }
