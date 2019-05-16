@@ -21,6 +21,7 @@ export class LeaderCreateComponent implements OnInit {
 
   createForm () {
    this.leaderForm = this._form.group ({
+     LeaderID: new FormControl,
     LeaderName: new FormControl,
     SpeakingAbilityRating: new FormControl,
     EngagingRating: new FormControl,

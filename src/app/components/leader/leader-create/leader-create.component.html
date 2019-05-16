@@ -1,6 +1,7 @@
 <h1>Create a Leader.</h1>
 <hr>
 
+
 <form #f="ngForm" (ngSubmit)="onSubmit()"[formGroup]="leaderForm">
   <div>
     <div>
@@ -14,6 +15,7 @@
       </mat-form-field>
     </div>
    </div>
-  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Leader</button>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit" routerLink="/leader">Create Leader</button>
 </form>
+
 <a mat-button routerLink="/leader">Back to List</a>
