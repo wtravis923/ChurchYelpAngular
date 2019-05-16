@@ -1,5 +1,5 @@
 <h1>Index</h1>
-<a mat-raised-button color="primary">Create New</a>
+<a mat-raised-button color="primary" routerLink="/leader/create">Create New</a>
 <hr>
 
 <div>
@@ -10,7 +10,7 @@
 
   <ng-container matColumnDef="LeaderID">
     <mat-header-cell *matHeaderCellDef> Leader ID</mat-header-cell>
-    <mat-cell *matCellDef="let Leader">{{leader.LeaderID}}</mat-cell>
+    <mat-cell *matCellDef="let leader">{{leader.LeaderID}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="details">
@@ -20,22 +20,37 @@
 
   <ng-container matColumnDef="LeaderName">
     <mat-header-cell *matHeaderCellDef>Leader Name</mat-header-cell>
-  <mat-cell *matCellDf="let Leader">{{leader.LeaderName}}</mat-cell>
+  <mat-cell *matCellDef="let Leader">{{leader.LeaderName}}</mat-cell>
   </ng-container>
 
+  <ng-container matColumnDef="SpeakingAbilityRating">
+    <mat-header-cell *matHeaderCellDef>Speaking Ability</mat-header-cell>
+    <mat-cell *matCellDef="let leader">{{leader.SpeakingAbilityRating}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="EngagingRating">
+    <mat-header-cell *matHeaderCellDef>Ability to Engage</mat-header-cell>
+    <mat-cell *matCellDef="let leader">{{leader.EngagingRating}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="AuthenticRating">
+    <mat-header-cell *matHeaderCellDef>Is he/she Authentic?</mat-header-cell>
+    <mat-cell *matCellDef="let leader">{{leader.AuthenticRating}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="RapportRating">
+    <mat-header-cell *matHeaderCellDef>Rapport of leader</mat-header-cell>
+    <mat-cell *matCellDef="let leader">{{leader.RapportRating}}</mat-cell>
+  </ng-container>
+  
   <ng-container matColumnDef="buttons">
     <mat-header-cell *matHeaderCellDef></mat-header-cell>
     <mat-cell *matCellDef="let leader">
       <i mat-icon class="material-icons" routerLink="/leader/edit/{{leader.LeaderID}}">edit</i>
     </mat-cell>
   </ng-container>
-  <ng-container matColumnDef="buttons">
-    <mat-header-cell *matHeaderCellDef></mat-header-cell>
-    <mat-cell *matCellDef="let leader">
-      <i mat-icon class="material-icons" routerLink="/leader/edit/{{leader.LeaderID}}">edit</i>
-      <i class="material-icons" routerLink="/leader/delete/{{leader.LeaderID}}">delete</i>
-    </mat-cell>
 
-  </ng-container>
+  
+
   </mat-table>
 </div>
