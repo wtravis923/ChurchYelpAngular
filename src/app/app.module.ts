@@ -56,9 +56,9 @@ const routes = [
     path: 'leader', children: [
       { path: '', component: LeaderListItemComponent },
       { path: 'create', component: LeaderCreateComponent },
-      { path: 'detail', component: LeaderDetailComponent },
-      { path: 'edit', component: LeaderEditComponent },
-      { path: 'delete', component: LeaderDeleteComponent },
+      { path: 'detail/:id', component: LeaderDetailComponent },
+      { path: 'delete/:id', component: LeaderDeleteComponent },
+      { path: 'edit/:id', component: LeaderEditComponent },
     ]
   },
   {
@@ -71,7 +71,7 @@ const routes = [
     ]
   },
   {
-    path: 'churchRating', children: [
+    path: 'churchrating', children: [
       { path: '', component: ChurchRatingIndexComponent },
       { path: 'create', component: ChurchRatingCreateComponent }
 
@@ -85,13 +85,13 @@ const routes = [
     HeaderComponent,
     LoginComponent,
     RegistrationComponent,
-    ChurchListItemComponent,
     HomeComponent,
-    LeaderListItemComponent,
+    ChurchListItemComponent,
     ChurchCreateComponent,
     ChurchDetailComponent,
     ChurchEditComponent,
     ChurchDeleteComponent,
+    LeaderListItemComponent,
     LeaderCreateComponent,
     LeaderDetailComponent,
     LeaderEditComponent,

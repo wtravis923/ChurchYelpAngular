@@ -1,21 +1,15 @@
 <h1>Create a Leader.</h1>
 <hr>
 
-
-<form #f="ngForm" (ngSubmit)="onSubmit()"[formGroup]="leaderForm">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="leaderForm">
   <div>
     <div>
-     <!-- <mat-form-field>
-        <input matInput placeholder="LeaderID" formControlName="LeaderID" type="LeaderID" required/>
-      </mat-form-field>-->
-    </div>
-    <div>
       <mat-form-field>
-        <input matInput placeholder="LeaderName" formControlName="LeaderName" type="LeaderName" required/>
+        <input matInput placeholder="LeaderName" formControlName="LeaderName" type="LeaderName" required />
       </mat-form-field>
     </div>
-   </div>
-  <button mat-raised-button class="nav-btn" color="primary" type="submit" routerLink="/leader">Create Leader</button>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Leader</button>
 </form>
 
 <a mat-button routerLink="/leader">Back to List</a>
