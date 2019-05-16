@@ -6,66 +6,60 @@
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
-      
-      <ng-container matColumnDef="ChurchId">
-        <mat-header-cell *matHeaderCellDef> Church ID </mat-header-cell>
-        <mat-cell *matCellDef="let church"> {{church.ChurchId}} </mat-cell>
-      </ng-container>
 
-      <ng-container matColumnDef="ChurchName">
-        <mat-header-cell *matHeaderCellDef> Church </mat-header-cell>
-        <mat-cell *matCellDef="let church"> {{church.ChurchName}} </mat-cell>
-      </ng-container>
-        
-      <ng-container matColumnDef="ChurchCity">
-          <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
-          <mat-cell *matCellDef="let church"> {{church.ChurchCity}} </mat-cell>
-        </ng-container>
+    <ng-container matColumnDef="ChurchID">
+      <mat-header-cell *matHeaderCellDef> Church ID </mat-header-cell>
+      <mat-cell *matCellDef="let church"> {{church.ChurchID}} </mat-cell>
+    </ng-container>
 
-      <ng-container matColumnDef="ChurchState">
-          <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
-          <mat-cell *matCellDef="let church"> {{church.ChurchState}} </mat-cell>
-        </ng-container>
+    <ng-container matColumnDef="ChurchName">
+      <mat-header-cell *matHeaderCellDef> Church </mat-header-cell>
+      <mat-cell *matCellDef="let church"> {{church.ChurchName}} </mat-cell>
+    </ng-container>
 
-        <ng-container matColumnDef="CommunityInvolvementRating">
-          <mat-header-cell *matHeaderCellDef> Outreach </mat-header-cell>
-          <mat-cell *matCellDef="let church"> {{church.CommunityInvolvementRating}} </mat-cell>
-        </ng-container>
+    <ng-container matColumnDef="ChurchCity">
+      <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+      <mat-cell *matCellDef="let church"> {{church.ChurchCity}} </mat-cell>
+    </ng-container>
 
-        <ng-container matColumnDef="FriendlyRating">
-          <mat-header-cell *matHeaderCellDef> Friendliness </mat-header-cell>
-          <mat-cell *matCellDef="let church"> {{church.FriendlyRating}} </mat-cell>
-        </ng-container>
+    <ng-container matColumnDef="ChurchState">
+      <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+      <mat-cell *matCellDef="let church"> {{church.ChurchState}} </mat-cell>
+    </ng-container>
 
-        <ng-container matColumnDef="FacilityRating">
-          <mat-header-cell *matHeaderCellDef> Facility </mat-header-cell>
-          <mat-cell *matCellDef="let church"> {{church.FacilityRating}} </mat-cell>
-        </ng-container>
+    <ng-container matColumnDef="CommunityInvolvementRating">
+      <mat-header-cell *matHeaderCellDef> Outreach </mat-header-cell>
+      <mat-cell *matCellDef="let church"> {{church.CommunityInvolvementRating}} </mat-cell>
+    </ng-container>
 
-        <ng-container matColumnDef="MusicRating">
-          <mat-header-cell *matHeaderCellDef> Music </mat-header-cell>
-          <mat-cell *matCellDef="let church"> {{church.MusicRating}} </mat-cell>
-        </ng-container>
+    <ng-container matColumnDef="FriendlyRating">
+      <mat-header-cell *matHeaderCellDef> Friendliness </mat-header-cell>
+      <mat-cell *matCellDef="let church"> {{church.FriendlyRating}} </mat-cell>
+    </ng-container>
 
-        <ng-container matColumnDef="MessageRating">
-          <mat-header-cell *matHeaderCellDef> Message </mat-header-cell>
-          <mat-cell *matCellDef="let church"> {{church.MessageRating}} </mat-cell>
-        </ng-container>
+    <ng-container matColumnDef="FacilityRating">
+      <mat-header-cell *matHeaderCellDef> Facility </mat-header-cell>
+      <mat-cell *matCellDef="let church"> {{church.FacilityRating}} </mat-cell>
+    </ng-container>
 
-        <ng-container matColumnDef="buttons">
-          <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-          <mat-cell *matCellDef="let church"> 
-            <i mat-icon class="material-icons" routerLink="/edit/{{church.ChurchId}}">edit</i>
-            <i class="material-icons" routerLink="/delete/{{church.ChurchId}}">delete</i>
-          </mat-cell>
-        </ng-container>
+    <ng-container matColumnDef="MusicRating">
+      <mat-header-cell *matHeaderCellDef> Music </mat-header-cell>
+      <mat-cell *matCellDef="let church"> {{church.MusicRating}} </mat-cell>
+    </ng-container>
 
-        <!-- <ng-container matColumnDef="details">
-          <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-          <mat-cell *matCellDef="let note" routerLink="/church/detail/{{church.ChurchId}}">
-          <i class="material-icons">Details</i>
-        </mat-cell>
-        </ng-container> -->
+    <ng-container matColumnDef="MessageRating">
+      <mat-header-cell *matHeaderCellDef> Message </mat-header-cell>
+      <mat-cell *matCellDef="let church"> {{church.MessageRating}} </mat-cell>
+    </ng-container>
 
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let church">
+        <i mat-icon class="material-icons" routerLink="edit/{{church.ChurchID}}">edit</i>
+        <i class="material-icons" routerLink="/church/delete/{{church.ChurchID}}">delete</i>
+        <i routerLink="/church/detail/{{church.ChurchID}}" class="material-icons">library_books</i>
+        <i routerLink="/churchrating/create" class="material-icons">star_half</i>
+      </mat-cell>
+    </ng-container>
   </mat-table>
 </div>

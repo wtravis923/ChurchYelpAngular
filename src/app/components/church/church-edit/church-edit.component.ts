@@ -32,7 +32,7 @@ editChurchForm: FormGroup;
   
   createForm() {
     this.editChurchForm = this._form.group({
-      ChurchId: new FormControl(this.church.ChurchId),
+      ChurchID: new FormControl(this.church.ChurchID),
       ChurchName: new FormControl(this.church.ChurchName),
       ChurchCity: new FormControl(this.church.ChurchCity),
       ChurchState: new FormControl(this.church.ChurchState)
@@ -41,7 +41,7 @@ editChurchForm: FormGroup;
 
   onSubmit(form) {
     const updateChurch: Church = {
-      ChurchId: form.value.ChurchId,
+      ChurchID: form.value.ChurchID,
       ChurchName: form.value.ChurchName,
       ChurchCity: form.value.ChurchCity,
       ChurchState: form.value.ChurchState
