@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {LeaderService} from 'src/app/services/leader.service';
-import {Leader} from '../../../models/Leader';
+import { LeaderService } from 'src/app/services/leader.service';
+import { Leader } from '../../../models/Leader';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
-  selector: 'app-leader-index',
+  selector: 'app-leader-listItem',
   templateUrl: './leader-listItem.component.html',
   styleUrls: ['./leader-listItem.component.css']
 })

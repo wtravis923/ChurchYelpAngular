@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LeaderRating } from '../models/leaderrating';
 
 
-const ApiUrl = 'https://churchyelp.azurewebsites.net/api';
+const ApiUrl = 'https://churchyelpapi.azurewebsites.net/api';
 
 @Injectable()
 export class LeaderratingService {
@@ -30,6 +30,6 @@ export class LeaderratingService {
   }
 
   private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer $(localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
 }
