@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ChurchRatingsService } from '../../../services/churchratings.service'
-import { ChurchRating } from '../../../models/ChurchRating'
+import { ChurchRatingsService } from '../../../services/churchratings.service';
+import { ChurchRating } from '../../../models/ChurchRating';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
@@ -18,7 +18,7 @@ export class ChurchRatingIndexComponent implements OnInit {
     });
   }
 
-  columnNames = ['churchRatingID', 'userID', 'churchID', 'CommunityInvolvementRating', 'FriendlyRating', 'FacilityRating', 'MusicRating', 'MessageRating'];
+  columnNames = ['churchRatingID', 'userID', 'churchID', 'CommunityInvolvementRating', 'FriendlyRating', 'FacilityRating', 'MusicRating', 'MessageRating', 'buttons'];
   
   dataSource: MatTableDataSource<ChurchRating>
 }

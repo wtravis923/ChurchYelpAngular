@@ -11,10 +11,21 @@
       </mat-form-field>
     </div>
     <div>
-      
-        <!-- <input matInput placeholder="SpeakingAbilityRating" 
-        type="SpeakingAbilityRating" required /> -->
-      <!-- </mat-form-field> -->
+      <mat-form-field>
+        Speaker Rating 
+        <br>
+        <br>
+          <mat-slider
+          thumbLabel
+          [displayWith]="formatLabel"
+          tickInterval="1"
+          min="1"
+          max="5">
+        </mat-slider>
+        <div hidden>
+        <input matInput 
+        type="SpeakingAbilityRating" /></div>
+      </mat-form-field>
 
     </div>
     <div>
