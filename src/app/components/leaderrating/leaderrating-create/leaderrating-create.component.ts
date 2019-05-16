@@ -30,9 +30,24 @@ export class LeaderratingCreateComponent implements OnInit {
     RapportRating: new FormControl,
     });
   }
+
+  columnNames = ['ChurchRatingID', 'UserID', 'ChurchID', 'CommunityInvolvementRating', 'FriendlyRating', 'FacilityRating', 'MusicRating', 'MessageRating']
   onSubmit() {
-    this._leaderratingService.createLeaderRating(this.leaderratingForm.value).subscribe(date => {
+    this._leaderratingService.createLeaderRating(this.leaderratingForm.value).subscribe(data => {
       this._router.navigate(['/leaderratings']);
     });
+  }
+}
+export class SliderFormattingExample {
+  formatLabel(value: number | null) {
+    if (!value) {
+      return 0;
+    }
+
+    if (value >= 1000) {
+      return Math.round(value / 1000) + 'k';
+    }
+
+    return value;
   }
 }
