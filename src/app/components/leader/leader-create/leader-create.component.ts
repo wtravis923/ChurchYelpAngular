@@ -12,24 +12,23 @@ import { Router } from '@angular/router';
 export class LeaderCreateComponent implements OnInit {
 
   leaderForm: FormGroup;
-
+  
   constructor(private _leaderService: LeaderService, private _form: FormBuilder, private _router: Router) {
     this.createForm();
   }
-
+  
   ngOnInit() {
   }
-
+  
   createForm() {
     this.leaderForm = this._form.group({
-      LeaderName: new FormControl
+      LeaderName: new FormControl(),
     });
   }
-
+  
   onSubmit() {
-    this._leaderService.createLeader (this.leaderForm.value).subscribe(data => {
-      this._router.navigate(['/Leader']);
+    this._leaderService.createLeader(this.leaderForm.value).subscribe(data => {
+      this._router.navigate(['/leader']);
     });
   }
-
 }
