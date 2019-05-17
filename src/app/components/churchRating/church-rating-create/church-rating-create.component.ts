@@ -44,7 +44,7 @@ export class SliderFormattingExample {
     if (!value) {
       return 0;
     }
+
     return value;
   }
 }
-
