@@ -4,9 +4,9 @@ export interface Church {
     ChurchName: string;
     ChurchCity: string;
     ChurchState: string;
-    CommunityInvolvementRating?: number;
-    FriendlyRating?: number;
-    FacilityRating?: number;
-    MusicRating?: number;
-    MessageRating?: number;
+    // CommunityInvolvementRating?: number;
+    // FriendlyRating?: number;
+    // FacilityRating?: number;
+    // MusicRating?: number;
+    // MessageRating?: number;
 }
