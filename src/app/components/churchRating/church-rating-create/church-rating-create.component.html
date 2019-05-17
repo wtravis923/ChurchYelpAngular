@@ -1,39 +1,52 @@
 <h1>Rate a Church</h1>
 <hr>
 
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup="noteForm"]>
-<div>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="churchRatingForm">
   <div>
-    <mat-form-field>
-      <input matInput placeholder="ChurchID" formControlName="ChurchID" type="ChurchID" required/>
-    </mat-form-field>
+      <div>
+          <mat-form-field>
+            <mat-select placeholder="Select a Church" formControlName="ChurchID" required>
+              <mat-option *ngFor="let churchID of churches" [value]="churchID.ChurchID">{{churchID.ChurchName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+    <div>
+      <h3>Community Involvement</h3>
+      <h6>How involved is this church in the local community?</h6>
+      <mat-slider matInput thumbLabel [displayWith]="CommunityInvolvementRating"
+        formControlName="CommunityInvolvementRating" type="CommunityInvolvementRating" min="1" max="5">
+      </mat-slider>
+    </div>
+    <div>
+      <h3>Friendliness</h3>
+      <h6>How friendly is the church?</h6>
+      <mat-slider matInput thumbLabel [displayWith]="FriendlyRating"
+        formControlName="FriendlyRating" type="FriendlyRating" min="1" max="5">
+      </mat-slider>
+    </div>
+    <div>
+        <h3>Facility</h3>
+        <h6>How would you rate the church facilities?</h6>
+        <mat-slider matInput thumbLabel [displayWith]="FacilityRating"
+          formControlName="FacilityRating" type="FacilityRating" min="1" max="5">
+        </mat-slider>
+      </div>
+      <div>
+          <h3>Music</h3>
+          <h6>How would you rate the church's music?</h6>
+          <mat-slider matInput thumbLabel [displayWith]="MusicRating"
+            formControlName="MusicRating" type="MusicRating" min="1" max="5">
+          </mat-slider>
+        </div>
+        <div>
+            <h3>Message</h3>
+            <h6>Did you find the message to be engaging and relevant?</h6>
+            <mat-slider matInput thumbLabel [displayWith]="MessageRating"
+              formControlName="MessageRating" type="MessageRating" min="1" max="5">
+            </mat-slider>
+          </div>
   </div>
-  <div>
-    <mat-form-field>
-      <input matInput placeholder="Community Involvement" formControlName="CommunityInvolvementRating" type="CommunityInvolvementRating" required/>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field>
-      <input matInput placeholder="Friendly Rating" formControlName="FriendlyRating" type="FriendlyRating" required/>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field>
-      <input matInput placeholder="Facility Rating" formControlName="FacilityRating" type="FacilityRating" required/>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field>
-      <input matInput placeholder="Music Rating" formControlName="MusicRating" type="MusicRating" required/>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field>
-      <input matInput placeholder="Message Rating" formControlName="MessageRating" type="MessageRating" required/>
-    </mat-form-field>
-  </div>
-</div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Submit</button>
 </form>
 
 <a mat-button routerLink="/church">Back to List</a>
