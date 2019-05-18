@@ -24,27 +24,27 @@
 
     <ng-container matColumnDef="CommunityInvolvementRating">
       <mat-header-cell *matHeaderCellDef> Outreach </mat-header-cell>
-      <mat-cell *matCellDef="let church"> {{church.CommunityInvolvementRating | number 1.0.0 }} </mat-cell>
+      <mat-cell *matCellDef="let church"> {{church.CommunityInvolvementRating | number: '1.0-0' }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="FriendlyRating">
       <mat-header-cell *matHeaderCellDef> Friendliness </mat-header-cell>
-      <mat-cell *matCellDef="let church"> {{church.FriendlyRating}} </mat-cell>
+      <mat-cell *matCellDef="let church"> {{church.FriendlyRating | number: '1.0-0' }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="FacilityRating">
       <mat-header-cell *matHeaderCellDef> Facility </mat-header-cell>
-      <mat-cell *matCellDef="let church"> {{church.FacilityRating}} </mat-cell>
+      <mat-cell *matCellDef="let church"> {{church.FacilityRating | number: '1.0-0' }}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="MusicRating">
       <mat-header-cell *matHeaderCellDef> Music </mat-header-cell>
-      <mat-cell *matCellDef="let church"> {{church.MusicRating}} </mat-cell>
+      <mat-cell *matCellDef="let church"> {{church.MusicRating | number: '1.0-0' }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="MessageRating">
       <mat-header-cell *matHeaderCellDef> Message </mat-header-cell>
-      <mat-cell *matCellDef="let church"> {{church.MessageRating}} </mat-cell>
+      <mat-cell *matCellDef="let church"> {{church.MessageRating | number: '1.0-0' }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="buttons">
