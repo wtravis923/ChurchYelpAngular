@@ -1,6 +1,6 @@
 <h1>ChurchRating</h1>
 
-<a mat-raised-button color="primary">Create New</a>
+<a mat-raised-button color="primary" routerLink="churchRating/create">Create New</a>
 <hr>
 
 <div>
@@ -9,19 +9,9 @@
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
   </mat-table>
 
-  <ng-container matColumnDef="churchRatingID">
-    <mat-header-cell *matHeaderCellDef> churchRatingID </mat-header-cell>
-    <mat-cell *matCellDef="let churchRating">{{churchRating.churchRatingID}}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="userID">
-    <mat-header-cell *matHeaderCellDef> userID </mat-header-cell>
-    <mat-cell *matCellDef="let churchRating">{{churchRating.userID}}</mat-cell>
-  </ng-container>
-
   <ng-container matColumnDef="churchID">
     <mat-header-cell *matHeaderCellDef> churchID </mat-header-cell>
-    <mat-cell *matCellDef="let churchRating">{{churchRating.churchID}}</mat-cell>
+    <mat-cell *matCellDef="let churchRating">{{church.churchID}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="CommunityInvolvementRating">
