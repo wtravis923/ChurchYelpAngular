@@ -11,16 +11,17 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./leader-edit.component.css']
 })
 export class LeaderEditComponent implements OnInit {
-leader:Leader;
+
+  leader:Leader;
 
 editLeaderForm: FormGroup;
 
   constructor(private _form:FormBuilder,
     private _leaderService: LeaderService,
     private _ar: ActivatedRoute,
-    private _router: Router) {
-
-      this._ar.paramMap.subscribe(p => {
+    private _router: Router
+    ) {
+    this._ar.paramMap.subscribe(p => {
         this._leaderService.getLeader(p.get('id')).subscribe((singleLeader: Leader) => {
           this.leader= singleLeader;
           this.createForm();
@@ -34,7 +35,8 @@ editLeaderForm: FormGroup;
   createForm() {
     this.editLeaderForm = this._form.group({
       LeaderID: new FormControl(this.leader.LeaderID),
-    LeaderName: new FormControl(this.leader.LeaderName)    
+    LeaderName: new FormControl(this.leader.LeaderName),
+
   });
   }
 

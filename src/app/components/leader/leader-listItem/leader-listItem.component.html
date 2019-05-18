@@ -47,10 +47,10 @@
     <mat-header-cell *matHeaderCellDef></mat-header-cell>
     <mat-cell *matCellDef="let leader">
       <i mat-icon class="material-icons" routerLink="/leader/edit/{{leader.LeaderID}}">edit</i>
+      <i class="material-icons" routerLink="/leader/delete/{{leader.LeaderID}}">delete</i>
+      <i routerLink="/leader/detail/{{leader.LeaderID" class="material-icons">library_books</i>
+      <i routerLink="/leaderRating/create" class="material-icons">star_half</i>
     </mat-cell>
-  </ng-container>
-
-  
-
-  </mat-table>
+  </ng-container> 
+ </mat-table>
 </div>
