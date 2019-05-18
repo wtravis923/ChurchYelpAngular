@@ -1,13 +1,29 @@
 <h1>Details</h1>
 <hr>
-<div ngIf="leader">
+<div *ngIf="leader">
   <div>
     <label for="">LeaderID:</label>
     <span>{{leader.LeaderID}}</span>
   </div>
   <div>
-    <label for="">Leader Name:</label>
+    <label for="">LeaderName:</label>
     <span>{{leader.LeaderName}}</span>
+  </div>
+  <div>
+    <label for="">SpeakingAbilityRating</label>
+    <span>{{leader.SpeakingAbilityRating}}</span>
+  </div>
+  <div>
+    <label for="">EngagingRating</label>
+    <span>{{leader.EngagingRating}}</span>
+  </div>
+  <div>
+    <label for="">AuthenticRating</label>
+    <span>{{leader.AuthenticRating}}</span>
+  </div>
+  <div>
+    <label for="">RapportRating</label>
+    <span>{{leader.RapportRating}}</span>
   </div>
 </div>
 
