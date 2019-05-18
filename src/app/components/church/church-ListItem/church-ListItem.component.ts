@@ -7,7 +7,7 @@ import { MatTableDataSource } from '@angular/material';
 @Component({
   selector: 'app-church-ListItem',
   templateUrl: './church-ListItem.component.html',
-  styleUrls: ['./church-ListItem.component.css']
+  styleUrls: ['./church-ListItem.component.css'],
 })
 export class ChurchListItemComponent implements OnInit {
 
