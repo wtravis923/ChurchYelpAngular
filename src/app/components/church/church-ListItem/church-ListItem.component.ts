@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Church } from '../../../models/Church';
+import { ChurchRating } from '../../../models/ChurchRating'
 import { ChurchService } from 'src/app/services/church.service';
 import { MatTableDataSource } from '@angular/material';
 
@@ -17,6 +18,6 @@ export class ChurchListItemComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Church>(church);
     });
   }
-  columnNames =['ChurchID', 'ChurchName', 'ChurchCity', 'ChurchState', 'FriendlyRating', 'CommunityInvolvementRating', 'FacilityRating', 'MusicRating', 'MessageRating', 'buttons'];
+  columnNames =['ChurchName', 'ChurchCity', 'ChurchState', 'FriendlyRating', 'CommunityInvolvementRating', 'FacilityRating', 'MusicRating', 'MessageRating', 'buttons'];
   dataSource: MatTableDataSource<Church>
 }

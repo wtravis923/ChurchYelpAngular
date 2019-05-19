@@ -18,7 +18,7 @@ export class ChurchRatingIndexComponent implements OnInit {
     });
   }
 
-  columnNames = ['churchRatingID', 'userID', 'churchID', 'CommunityInvolvementRating', 'FriendlyRating', 'FacilityRating', 'MusicRating', 'MessageRating', 'buttons'];
+  columnNames = ['churchID', 'CommunityInvolvementRating', 'FriendlyRating', 'FacilityRating', 'MusicRating', 'MessageRating', 'buttons'];
   
   dataSource: MatTableDataSource<ChurchRating>
 }

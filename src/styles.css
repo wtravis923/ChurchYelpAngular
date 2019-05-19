@@ -4,7 +4,11 @@
 
 
 html, body { height: 100%; }
+<<<<<<< HEAD
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+=======
+body { margin: 0, 0, 0, 2px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+>>>>>>> c24b29fde777139028fe76d318ec56737fc9de68

@@ -14,24 +14,27 @@ export class LeaderCreateComponent implements OnInit {
 
   leader:Leader;
   leaderForm: FormGroup;
-
+  
   constructor(private _leaderService: LeaderService, private _form: FormBuilder, private _router: Router) {
     this.createForm();
   }
-
+  
   ngOnInit() {
   }
-
+  
   createForm() {
     this.leaderForm = this._form.group({
-      LeaderName: new FormControl
+      LeaderName: new FormControl(),
     });
   }
-
+  
   onSubmit() {
+<<<<<<< HEAD
     this._leaderService.createLeader (this.leaderForm.value).subscribe(data => {
+=======
+    this._leaderService.createLeader(this.leaderForm.value).subscribe(data => {
+>>>>>>> c24b29fde777139028fe76d318ec56737fc9de68
       this._router.navigate(['/leader']);
     });
   }
-
 }
