@@ -1,14 +1,28 @@
-body {
-    background: "https://media.swncdn.com/cms/CCOM/46076-old-church.800w.tn.jpg";
-    margin-left: 20px;
-    height: 100%;
-}
 
-.landing {
-    background-color: firebrick;
-}
 
-.bg {
+.search-form {
+    min-width: 150px;
+    max-width: 500px;
     width: 100%;
-    position: 0;
-}
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+
+  .welcomemsg {
+      text-align: center;
+      align-content: center;
+  }
+
+  .search {
+      padding-left: 245px;
+  }
+
+  .nav-btn {
+      margin-left: 10px;
+  }
+
+  .buttons {
+      padding-left: 100px;
+  }

@@ -2,26 +2,26 @@
 <h1>Create a Church.</h1>
 <hr>
 
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="churchForm">
+<form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="churchForm">
   <div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="ChurchName" formControlName="ChurchName" type="ChurchName" required/>
+        <input matInput placeholder="Church Name" formControlName="ChurchName" type="ChurchName" required/>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="ChurchCity" formControlName="ChurchCity" type="ChurchCity" required/>
+        <input matInput placeholder="Church City" formControlName="ChurchCity" type="ChurchCity" required/>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="ChurchState" formControlName="ChurchState" type="ChurchState" required/>
+        <input matInput placeholder="Church State" formControlName="ChurchState" type="ChurchState" required/>
       </mat-form-field>
     </div>
   </div>
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Church</button>
 </form>
 
-<a mat-button routerLink="/church">Back to List</a>
+<a mat-button routerLink="/church">Cancel</a>
 </body>
