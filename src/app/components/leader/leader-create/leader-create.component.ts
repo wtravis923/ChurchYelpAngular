@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LeaderService } from '../../../services/leader.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import {Leader} from '../../../models/leader';
+import {Leader} from '../../../models/Leader';
 
 
 @Component({

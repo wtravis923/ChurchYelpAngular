@@ -4,10 +4,10 @@
 
 .nav-btn {
     margin-right: 0.5em;
-    background-color: lightgrey;
+    background-color: black;
     color: white;
 }
 
 .mat-toolbar {
-    background-color: rgba(0,0,0,0)
+    opacity: 1;
 }
