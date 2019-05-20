@@ -45,21 +45,22 @@ import { LeaderratingCreateComponent } from './components/leaderrating/leaderrat
 import { LeaderratingDetailComponent } from './components/leaderrating/leaderrating-detail/leaderrating-detail.component';
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
 import { Pipe } from '@angular/core';
-
+import { AuthGuard } from './guards/auth.guard';
+import {Observable} from 'rxjs';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent},
   {
-    path: 'leaderrating', children: [
+    path: 'leaderrating', canActivate: [AuthGuard], children: [
       { path: '', component: LeaderratingIndexComponent },
       { path: 'create', component: LeaderratingCreateComponent },
       { path: 'edit/:id', component: LeaderRatingEditComponent },
     ]
   },
   {
-    path: 'leader', children: [
+    path: 'leader', canActivate: [AuthGuard],  children: [
       { path: '', component: LeaderListItemComponent },
       { path: 'create', component: LeaderCreateComponent },
       { path: 'detail/:id', component: LeaderDetailComponent },
@@ -68,7 +69,7 @@ const routes = [
     ]
   },
   {
-    path: 'church', children: [
+    path: 'church', canActivate: [AuthGuard], children: [
       { path: '', component: ChurchListItemComponent },
       { path: 'create', component: ChurchCreateComponent },
       { path: 'detail/:id', component: ChurchDetailComponent },
@@ -77,7 +78,7 @@ const routes = [
     ]
   },
   {
-    path: 'churchrating', children: [
+    path: 'churchrating', canActivate: [AuthGuard], children: [
       { path: '', component: ChurchRatingIndexComponent },
       { path: 'create', component: ChurchRatingCreateComponent }
 
@@ -137,6 +138,8 @@ export class RoundPipe {
     MatSelectModule,
     MatCardModule,
     MatProgressSpinnerModule
+    Observable
+    MatCardModule
   ],
   providers: [
     AuthService,

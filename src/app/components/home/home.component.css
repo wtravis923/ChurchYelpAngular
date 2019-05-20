@@ -1,7 +1,14 @@
 body {
-    background-image: url(../../../assets/oldchurch.jpg);
-    background-size: 100%;
-    opacity: .8;
-    position: relative;
-    background-repeat: no-repeat;
+    background: "https://media.swncdn.com/cms/CCOM/46076-old-church.800w.tn.jpg";
+    margin-left: 20px;
+    height: 100%;
+}
+
+.landing {
+    background-color: firebrick;
+}
+
+.bg {
+    width: 100%;
+    position: 0;
 }
