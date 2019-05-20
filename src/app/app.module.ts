@@ -43,6 +43,7 @@ import { LeaderratingDetailComponent } from './components/leaderrating/leaderrat
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
 import { AuthGuard } from './guards/auth.guard';
 import {Observable} from 'rxjs';
+import { ObserversModule } from '@angular/cdk/observers';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -103,7 +104,8 @@ const routes = [
     LeaderRatingEditComponent,
     ChurchRatingCreateComponent,
     LeaderratingIndexComponent,
-    ChurchRatingIndexComponent
+    ChurchRatingIndexComponent,
+    ObserversModule
   ],
   imports: [
     BrowserModule,
@@ -130,7 +132,8 @@ const routes = [
     ChurchRatingsService,
     LeaderService,
     LeaderratingService,
-    ChurchDetailComponent
+    ChurchDetailComponent,
+    ObserversModule
   ],
   bootstrap: [AppComponent]
 })

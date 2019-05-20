@@ -29,11 +29,7 @@ export class LeaderCreateComponent implements OnInit {
   }
   
   onSubmit() {
-<<<<<<< HEAD
     this._leaderService.createLeader (this.leaderForm.value).subscribe(data => {
-=======
-    this._leaderService.createLeader(this.leaderForm.value).subscribe(data => {
->>>>>>> c24b29fde777139028fe76d318ec56737fc9de68
       this._router.navigate(['/leader']);
     });
   }

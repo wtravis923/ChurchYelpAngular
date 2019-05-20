@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChurchService } from '../../../services/church.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import {Church} from '../../../models/Church';
 
 @Component({
   selector: 'app-church-create',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./church-create.component.css']
 })
 export class ChurchCreateComponent implements OnInit {
-
+  
+  church:Church;
   churchForm: FormGroup;
 
   constructor(private _churchService: ChurchService, private _form: FormBuilder, private _router: Router) {
