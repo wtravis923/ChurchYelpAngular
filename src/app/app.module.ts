@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
+import { RouterModule} from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import {
@@ -13,15 +13,12 @@ import {
   MatInputModule,
   MatTableModule
 } from '@angular/material';
-import { MatCardModule } from '@angular/material/card'
 import { MatSelectModule } from '@angular/material/select';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
-import { LogoutComponent} from './components/logout/logout.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ChurchService } from './services/church.service';
 import { ChurchRatingsService } from './services/churchratings.service'
@@ -44,8 +41,7 @@ import { LeaderratingIndexComponent } from './components/leaderrating/leaderrati
 import { LeaderratingCreateComponent } from './components/leaderrating/leaderrating-create/leaderrating-create.component';
 import { LeaderratingDetailComponent } from './components/leaderrating/leaderrating-detail/leaderrating-detail.component';
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
-import { Pipe } from '@angular/core';
-import { AuthGuard } from './guards/auth.guard';
+import { AuthGuard} from './guards/auth.guard';
 import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
 
@@ -53,7 +49,6 @@ import 'rxjs/add/operator/map';
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'logout', component: LogoutComponent},
   {
     path: 'leaderrating', canActivate: [AuthGuard], children: [
       { path: '', component: LeaderratingIndexComponent },
@@ -88,14 +83,6 @@ const routes = [
   },
   { path: '**', component: HomeComponent },
 ];
-
-@Pipe({name: 'round'})
-export class RoundPipe {
-  transform (input:number) {
-    return Math.floor(input)
-  }
-}
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -121,7 +108,6 @@ export class RoundPipe {
     ChurchRatingIndexComponent,
     LogoutComponent
   ],
-  
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -142,7 +128,6 @@ export class RoundPipe {
     MatCardModule,
     MatProgressSpinnerModule,
     Observable
-  
   ],
   providers: [
     AuthService,
@@ -153,6 +138,5 @@ export class RoundPipe {
     ChurchDetailComponent,
   ],
   bootstrap: [AppComponent]
-
 })
 export class AppModule { }
