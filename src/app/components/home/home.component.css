@@ -1,13 +1,7 @@
 body {
-    margin-left: 20px;
-    height: 100%;
-}
-
-.landing {
-    background-color: firebrick;
-}
-
-.bg {
-    width: 100%;
-    position: 0;
+    background-image: url(../../../assets/oldchurch.jpg);
+    background-size: 100%;
+    opacity: .8;
+    position: relative;
+    background-repeat: no-repeat;
 }

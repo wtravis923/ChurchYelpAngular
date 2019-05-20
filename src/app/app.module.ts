@@ -15,11 +15,13 @@ import {
 } from '@angular/material';
 import { MatCardModule } from '@angular/material/card'
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent} from './components/logout/logout.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ChurchService } from './services/church.service';
 import { ChurchRatingsService } from './services/churchratings.service'
@@ -42,11 +44,13 @@ import { LeaderratingIndexComponent } from './components/leaderrating/leaderrati
 import { LeaderratingCreateComponent } from './components/leaderrating/leaderrating-create/leaderrating-create.component';
 import { LeaderratingDetailComponent } from './components/leaderrating/leaderrating-detail/leaderrating-detail.component';
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
-import { Pipe } from '@angular/core'
+import { Pipe } from '@angular/core';
+
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent},
   {
     path: 'leaderrating', children: [
       { path: '', component: LeaderratingIndexComponent },
@@ -111,7 +115,8 @@ export class RoundPipe {
     LeaderRatingEditComponent,
     ChurchRatingCreateComponent,
     LeaderratingIndexComponent,
-    ChurchRatingIndexComponent
+    ChurchRatingIndexComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -130,7 +135,8 @@ export class RoundPipe {
     MatTableModule,
     HttpClientModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     AuthService,
