@@ -105,7 +105,8 @@ const routes = [
     LeaderRatingEditComponent,
     ChurchRatingCreateComponent,
     LeaderratingIndexComponent,
-    ChurchRatingIndexComponent
+    ChurchRatingIndexComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -124,10 +125,9 @@ const routes = [
     MatTableModule,
     HttpClientModule,
     MatSelectModule,
-    Observable, 
-    
-    
-    
+    MatCardModule,
+    MatProgressSpinnerModule,
+    Observable
   ],
   providers: [
     AuthService,
@@ -135,7 +135,7 @@ const routes = [
     ChurchRatingsService,
     LeaderService,
     LeaderratingService,
-    ChurchDetailComponent
+    ChurchDetailComponent,
   ],
   bootstrap: [AppComponent]
 })
