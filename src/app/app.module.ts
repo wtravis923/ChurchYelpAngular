@@ -47,7 +47,8 @@ import { LeaderRatingEditComponent } from './components/leaderrating/leaderratin
 import { Pipe } from '@angular/core';
 import { AuthGuard } from './guards/auth.guard';
 import {Observable} from 'rxjs';
-import { ObserversModule } from '@angular/cdk/observers';
+import 'rxjs/add/operator/map';
+
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -118,7 +119,6 @@ export class RoundPipe {
     ChurchRatingCreateComponent,
     LeaderratingIndexComponent,
     ChurchRatingIndexComponent,
-    ObserversModule,
     LogoutComponent
   ],
   
@@ -141,6 +141,7 @@ export class RoundPipe {
     MatSelectModule,
     MatCardModule,
     MatProgressSpinnerModule,
+    Observable
   
   ],
   providers: [
@@ -150,7 +151,6 @@ export class RoundPipe {
     LeaderService,
     LeaderratingService,
     ChurchDetailComponent,
-    ObserversModule
   ],
   bootstrap: [AppComponent]
 
