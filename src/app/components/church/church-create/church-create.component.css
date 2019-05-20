@@ -1,3 +1,10 @@
-body {
+/* body {
     padding-left: 10px;
+} */
+.mat-slider {
+    width: 250px;
+}
+.nav-btn {
+    background-color: black;
+    color: white;
 }
