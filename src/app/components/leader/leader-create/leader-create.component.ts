@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LeaderService } from '../../../services/leader.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import {Leader} from '../../../models/leader';
+import {Leader} from '../../../models/Leader';
 
 
 @Component({
@@ -29,11 +29,7 @@ export class LeaderCreateComponent implements OnInit {
   }
   
   onSubmit() {
-<<<<<<< HEAD
     this._leaderService.createLeader (this.leaderForm.value).subscribe(data => {
-=======
-    this._leaderService.createLeader(this.leaderForm.value).subscribe(data => {
->>>>>>> c24b29fde777139028fe76d318ec56737fc9de68
       this._router.navigate(['/leader']);
     });
   }
