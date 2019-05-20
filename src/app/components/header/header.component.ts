@@ -9,11 +9,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 @Input() public title: string;
-@Input() public isUserLoggedIn: boolean;
+@Input() public isLoggedIn: boolean;
 
-  
+constructor(private _authService: AuthService) { }
 
-  constructor(public _router: Router, public _authService: AuthService) { }
 
   ngOnInit() {
     if(localStorage.getItem('id_token')){

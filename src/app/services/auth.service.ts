@@ -17,6 +17,10 @@ export class AuthService {
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
+  private setHeader(): HttpHeaders {
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+  }
+
   register(regUserData: RegisterUser) {
     return this._http.post(`${Api_Url}/api/Account/Register`, regUserData);
   }
@@ -26,29 +30,21 @@ export class AuthService {
     `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
     
     return this._http.post(`${Api_Url}/token`, str).subscribe((token: Token) => {localStorage.setItem('id_token', token.access_token);
-    this.isUserLoggedIn.next(true);
-    console.log(this.isUserLoggedIn);
-    this.currentUser();
+    this.isLoggedIn.next(true);
+    this.setCurrentUser();
     this._router.navigate(['/']);
     });
   }
 
-  private setHeader(): HttpHeaders {
-    return new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('id_token')}`);
+  setCurrentUser() {
+    this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() })
   }
 
   logout() {
-
     localStorage.clear();
-
-    this.isUserLoggedIn.next(false);
-
-    this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() });
-
+    this.isLoggedIn.next(false);
+    this._http.post(`${Api_Url}/api/Account/Logout`, {headers: this.setHeader() });
     this._router.navigate(['/login']);
-
-    //window.location.reload();
-
   }
 
   currentUser(): Observable<Object> {
@@ -58,6 +54,4 @@ export class AuthService {
 
     return this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: authHeader });
   }
-
-
 }
