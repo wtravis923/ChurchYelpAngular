@@ -13,7 +13,7 @@ const Api_Url = 'https://churchyelpapi.azurewebsites.net'
 
 export class AuthService {
   userInfo: Token;
-  isLoggedIn = new Subject<boolean>();
+  isUserLoggedIn = new Subject<boolean>();
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
@@ -26,9 +26,29 @@ export class AuthService {
     `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
     
     return this._http.post(`${Api_Url}/token`, str).subscribe((token: Token) => {localStorage.setItem('id_token', token.access_token);
-    this.isLoggedIn.next(true);
+    this.isUserLoggedIn.next(true);
+    console.log(this.isUserLoggedIn);
+    this.currentUser();
     this._router.navigate(['/']);
     });
+  }
+
+  private setHeader(): HttpHeaders {
+    return new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('id_token')}`);
+  }
+
+  logout() {
+
+    localStorage.clear();
+
+    this.isUserLoggedIn.next(false);
+
+    this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() });
+
+    this._router.navigate(['/login']);
+
+    //window.location.reload();
+
   }
 
   currentUser(): Observable<Object> {

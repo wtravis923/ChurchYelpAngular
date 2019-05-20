@@ -1,7 +1,18 @@
-<mat-toolbar>
-    <span>Church Yelp</span>
-    <span class="example-fill-remaining-space"></span>
-    <button mat-raised-button class="nav-btn" color="primary" type="submit"><a routerLink="/register"
-            routerLinkActive="active" *ngIf="!isUserLoggedIn">Register</a></button>
-    <button mat-raised-button class="nav-btn"><a routerLink="/login" routerLinkActive="active">Login</a></button>
-</mat-toolbar>
+<mat-toolbar color="primary">
+
+        
+    
+        
+      
+      
+      
+        
+        <span class="example-fill-remaining-space"></span>
+        <button *ngIf="!isUserLoggedin" mat-stroked-button class="nav-btn" routerLink="/register">Register</button>
+        <button *ngIf="!isUserLoggedin" mat-stroked-button class="nav-btn" routerLink="/login">Login </button>
+        <button mat-menu-item (click)="onLogOut()" routerLink="/login">
+          <span>Logout</span>
+        </button>
+       
+      
+      </mat-toolbar>
