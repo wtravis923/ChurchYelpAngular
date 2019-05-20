@@ -31,5 +31,5 @@ constructor(private _authService: AuthService, private _router: Router) { }
 }
 
 export interface UserData{
-  isUserLoggedIn: boolean;
+  isLoggedIn: boolean;
 }
