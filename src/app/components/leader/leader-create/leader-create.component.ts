@@ -29,7 +29,6 @@ export class LeaderCreateComponent implements OnInit {
   }
   
   onSubmit() {
-
     this._leaderService.createLeader (this.leaderForm.value).subscribe(data => {
       this._router.navigate(['/leader']);
     });
