@@ -5,7 +5,7 @@ switch (window.location.hostname) {
     APIURL = 'https://churchyelp.herokuapp.com'
     break;
   default: 
-    APIURL = 'http://localhost:62897'
+    APIURL = 'http://localhost:4200'
 }
 
 export const environment = {
