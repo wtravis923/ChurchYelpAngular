@@ -1,0 +1,13 @@
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.nav-btn {
+    margin-right: 0.5em;
+    background-color: black;
+    color: white;
+}
+
+.mat-toolbar {
+    opacity: 1;
+}

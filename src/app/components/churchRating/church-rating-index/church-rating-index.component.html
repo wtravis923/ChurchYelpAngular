@@ -1,0 +1,42 @@
+<h1>ChurchRating</h1>
+
+<a mat-raised-button color="primary" routerLink="churchRating/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+  </mat-table>
+
+  <ng-container matColumnDef="churchID">
+    <mat-header-cell *matHeaderCellDef> churchID </mat-header-cell>
+    <mat-cell *matCellDef="let churchRating">{{church.churchID}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="CommunityInvolvementRating">
+    <mat-header-cell *matHeaderCellDef> CommunityInvolvementRating </mat-header-cell>
+    <mat-cell *matCellDef="let churchRating">{{churchRating.CommunityInvolvementRating}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="FriendlyRating">
+    <mat-header-cell *matHeaderCellDef> FriendlyRating </mat-header-cell>
+    <mat-cell *matCellDef="let churchRating">{{churchRating.FriendlyRating}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="FacilityRating">
+    <mat-header-cell *matHeaderCellDef> FacilityRating </mat-header-cell>
+    <mat-cell *matCellDef="let churchRating">{{churchRating.FacilityRating}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="MusicRating">
+    <mat-header-cell *matHeaderCellDef> MusicRating </mat-header-cell>
+    <mat-cell *matCellDef="let churchRating">{{churchRating.MusicRating}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="MessageRating">
+    <mat-header-cell *matHeaderCellDef> MessageRating </mat-header-cell>
+    <mat-cell *matCellDef="let churchRating">{{churchRating.MessageRating}}</mat-cell>
+  </ng-container>
+
+</div>

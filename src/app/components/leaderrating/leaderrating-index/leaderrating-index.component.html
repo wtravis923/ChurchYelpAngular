@@ -1,0 +1,71 @@
+<h1>LeaderRating</h1>
+<a mat-raised-button color="primary" routerLink="/leaderrating/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+      
+      <ng-container matColumnDef="LeaderId">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let leaderrating"> {{leaderrating.LeaderId}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="LeaderRatingId">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let leaderrating"> {{leaderrating.LeaderRatingId}} </mat-cell>
+      </ng-container>
+        
+      <ng-container matColumnDef="UserId">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let leaderrating"> {{leaderrating.UserId}} </mat-cell>
+        </ng-container>
+
+      <ng-container matColumnDef="SpeakingAbilityRating">
+          <mat-header-cell *matHeaderCellDef> Speaking Ability Rating </mat-header-cell>
+          <mat-cell *matCellDef="let leaderrating"> {{leaderrating.SpeakingAbilityRating}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="EngagingRating">
+          <mat-header-cell *matHeaderCellDef> Engaging Rating </mat-header-cell>
+          <mat-cell *matCellDef="let leaderrating"> {{leaderrating.EngagingRating}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="AuthenticRating">
+          <mat-header-cell *matHeaderCellDef> Authentic Rating </mat-header-cell>
+          <mat-cell *matCellDef="let leaderrating"> {{leaderrating.AuthenticRating}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="RapportRating">
+          <mat-header-cell *matHeaderCellDef> Rapport Rating </mat-header-cell>
+          <mat-cell *matCellDef="let leaderrating"> {{leaderrating.RapportRating}} </mat-cell>
+        </ng-container>
+
+        <!-- <ng-container matColumnDef="MusicRating">
+          <mat-header-cell *matHeaderCellDef> Music </mat-header-cell>
+          <mat-cell *matCellDef="let church"> {{church.MusicRating}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="MessageRating">
+          <mat-header-cell *matHeaderCellDef> Message </mat-header-cell>
+          <mat-cell *matCellDef="let church"> {{church.MessageRating}} </mat-cell>
+        </ng-container> -->
+
+        <ng-container matColumnDef="buttons">
+          <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+          <mat-cell *matCellDef="let leaderrating"> 
+            <i mat-icon class="material-icons" routerLink="/edit/{{leadrating.LeaderId}}">edit</i>
+            <i class="material-icons" routerLink="/delete/{{leaderrating.LeaderId}}">delete</i>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="details">
+          <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+          <mat-cell *matCellDef="let leaderrating" routerLink="/leaderrating/detail/{{leaderrating.LeaderId}}">
+          <i class="material-icons">Details</i>
+        </mat-cell>
+        </ng-container>
+
+  </mat-table>
+</div>
