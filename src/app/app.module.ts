@@ -137,9 +137,8 @@ export class RoundPipe {
     HttpClientModule,
     MatSelectModule,
     MatCardModule,
-    MatProgressSpinnerModule
-    Observable
-    MatCardModule
+    MatProgressSpinnerModule,
+  
   ],
   providers: [
     AuthService,
