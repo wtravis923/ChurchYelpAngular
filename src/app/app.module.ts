@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { ChurchService } from './services/church.service';
@@ -45,9 +46,6 @@ import { LeaderratingDetailComponent } from './components/leaderrating/leaderrat
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
 import { AuthGuard} from './guards/auth.guard';
 
-
-
-
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
@@ -59,7 +57,8 @@ const routes = [
     ]
   },
   {
-    path: 'leader',  children: [
+
+    path: 'leader', children: [
       { path: '', component: LeaderListItemComponent },
       { path: 'create', component: LeaderCreateComponent },
       { path: 'detail/:id', component: LeaderDetailComponent },
@@ -128,7 +127,6 @@ const routes = [
     HttpClientModule,
     MatSelectModule,
     MatCardModule,
-    
   ],
   providers: [
     AuthService,

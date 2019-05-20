@@ -2,3 +2,8 @@ body {
     padding-left: 10px;
     opacity: grey;
 }
+
+.nav-btn {
+    background-color: black;
+    color: white;
+}
