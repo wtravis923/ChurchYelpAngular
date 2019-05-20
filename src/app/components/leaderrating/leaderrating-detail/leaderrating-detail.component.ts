@@ -21,11 +21,4 @@ export class LeaderratingDetailComponent implements OnInit {
       });
     });
   }
-
-  onDelete() {
-    this._churchService.deleteChurch(this.church.ChurchID).subscribe(() => {
-      this._router.navigate(['/church']);
-    });
-  }
-
-}
+} 
