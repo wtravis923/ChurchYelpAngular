@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Church } from '../models/Church';
+import { APIURL } from '../../environments/environment.prod';
 
 const ApiUrl = 'https://churchyelpapi.azurewebsites.net/api'
 
