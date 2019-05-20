@@ -13,7 +13,7 @@ const Api_Url = 'https://churchyelpapi.azurewebsites.net'
 
 export class AuthService {
   userInfo: Token;
-  isLoggedIn = new Subject<boolean>();
+  isUserLoggedIn = new Subject<boolean>();
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
