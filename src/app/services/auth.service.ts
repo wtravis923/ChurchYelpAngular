@@ -4,6 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Token } from '../models/Token';
 import { Router, RouterLink } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { isAdmin } from '../models/isAdmin';
+
 
 const Api_Url = 'https://churchyelpapi.azurewebsites.net'
 
@@ -12,8 +14,11 @@ const Api_Url = 'https://churchyelpapi.azurewebsites.net'
 })
 
 export class AuthService {
+  user_role: isAdmin;
   userInfo: Token;
-  isUserLoggedIn = new Subject<boolean>();
+  userData: Subject<{}>;
+  isLoggedIn = new Subject<boolean>();
+
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
@@ -23,6 +28,17 @@ export class AuthService {
 
   register(regUserData: RegisterUser) {
     return this._http.post(`${Api_Url}/api/Account/Register`, regUserData);
+  }
+
+  getRole(){
+    if(!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)) }
+ 
+    return this._http.get(`${Api_Url}/api/Account/GetRole`, { headers: this.setHeader() } ).subscribe((isAdmin: isAdmin) =>{
+        this.user_role = isAdmin
+        localStorage.setItem('user_role', isAdmin.Role);
+        console.log(localStorage.getItem('user_role'));
+    }
+    );
   }
 
   login(loginInfo) {

@@ -13,6 +13,7 @@ import {
   MatInputModule,
   MatTableModule
 } from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +21,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import {LogoutComponent} from './components/logout/logout.component';
 import { ChurchService } from './services/church.service';
 import { ChurchRatingsService } from './services/churchratings.service'
 import { HomeComponent } from './components/home/home.component';
@@ -41,23 +43,20 @@ import { LeaderratingIndexComponent } from './components/leaderrating/leaderrati
 import { LeaderratingCreateComponent } from './components/leaderrating/leaderrating-create/leaderrating-create.component';
 import { LeaderratingDetailComponent } from './components/leaderrating/leaderrating-detail/leaderrating-detail.component';
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
-import { AuthGuard} from './guards/auth.guard';
-import {Observable} from 'rxjs';
-import 'rxjs/add/operator/map';
 
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   {
-    path: 'leaderrating', canActivate: [AuthGuard], children: [
+    path: 'leaderrating', children: [
       { path: '', component: LeaderratingIndexComponent },
       { path: 'create', component: LeaderratingCreateComponent },
       { path: 'edit/:id', component: LeaderRatingEditComponent },
     ]
   },
   {
-    path: 'leader', canActivate: [AuthGuard],  children: [
+    path: 'leader', children: [
       { path: '', component: LeaderListItemComponent },
       { path: 'create', component: LeaderCreateComponent },
       { path: 'detail/:id', component: LeaderDetailComponent },
@@ -66,7 +65,7 @@ const routes = [
     ]
   },
   {
-    path: 'church', canActivate: [AuthGuard], children: [
+    path: 'church',  children: [
       { path: '', component: ChurchListItemComponent },
       { path: 'create', component: ChurchCreateComponent },
       { path: 'detail/:id', component: ChurchDetailComponent },
@@ -75,7 +74,7 @@ const routes = [
     ]
   },
   {
-    path: 'churchrating', canActivate: [AuthGuard], children: [
+    path: 'churchrating', children: [
       { path: '', component: ChurchRatingIndexComponent },
       { path: 'create', component: ChurchRatingCreateComponent }
 
@@ -105,7 +104,8 @@ const routes = [
     LeaderRatingEditComponent,
     ChurchRatingCreateComponent,
     LeaderratingIndexComponent,
-    ChurchRatingIndexComponent
+    ChurchRatingIndexComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,6 +115,7 @@ const routes = [
     RouterModule.forRoot(routes),
     RouterModule,
     ReactiveFormsModule,
+    MatCardModule,
     MatSliderModule,
     MatSlideToggleModule,
     MatToolbarModule,
@@ -123,8 +124,7 @@ const routes = [
     MatInputModule,
     MatTableModule,
     HttpClientModule,
-    MatSelectModule,
-    Observable, 
+    MatSelectModule
     
     
     

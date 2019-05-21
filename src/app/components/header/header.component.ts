@@ -11,18 +11,18 @@ export class HeaderComponent implements OnInit {
 @Input() public title: string;
 @Input() public isLoggedIn: boolean;
 
-constructor(private _authService: AuthService) { }
+constructor(private _authService: AuthService, private _router: Router) { }
 
 
   ngOnInit() {
     if(localStorage.getItem('id_token')){
-      this.isUserLoggedIn = true;
+      this.isLoggedIn = true;
     }
   }
   onLogOut(){
     this._authService.logout();
-    this.isUserLoggedIn = false;
-    console.log(this.isUserLoggedIn);
+    this.isLoggedIn = false;
+    console.log(this.isLoggedIn);
     this._router.navigate(['/login']);
   }
   
@@ -30,5 +30,5 @@ constructor(private _authService: AuthService) { }
 }
 
 export interface UserData{
-  isUserLoggedIn: boolean;
+  isLoggedIn: boolean;
 }
