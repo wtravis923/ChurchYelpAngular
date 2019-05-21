@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
 import { Observable } from 'rxjs';
+import{ObserversModule} from '@angular/cdk/observers';
 
 
 @Injectable()
@@ -16,5 +17,9 @@ export class AuthGuard implements CanActivate {
                 return observer.next(true);
             }
         });
+    }
+    
+    ngOnInit(){
+        
     }
 }
