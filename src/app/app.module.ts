@@ -22,7 +22,6 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { LogoutComponent } from './components/logout/logout.component';
 import { ChurchService } from './services/church.service';
 import { ChurchRatingsService } from './services/churchratings.service'
 import { HomeComponent } from './components/home/home.component';
@@ -62,7 +61,7 @@ const routes = [
       { path: '', component: LeaderListItemComponent },
       { path: 'create', component: LeaderCreateComponent },
       { path: 'detail/:id', component: LeaderDetailComponent },
-      { path: 'delete/:id', component: LeaderDeleteComponent },
+      { path: 'delete/:id', canActivate: [RolegaurdGaurd], component: LeaderDeleteComponent },
       { path: 'edit/:id', component: LeaderEditComponent },
     ]
   },
@@ -71,7 +70,7 @@ const routes = [
       { path: '', component: ChurchListItemComponent },
       { path: 'create', component: ChurchCreateComponent },
       { path: 'detail/:id', component: ChurchDetailComponent },
-      { path: 'delete/:id', component: ChurchDeleteComponent },
+      { path: 'delete/:id',canActivate: [RolegaurdGaurd], component: ChurchDeleteComponent },
       { path: 'edit/:id', component: ChurchEditComponent },
     ]
   },
