@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaderService } from 'src/app/services/leader.service';
-import { Leader } from '../../../models/leader';
+import { Leader } from '../../../models/Leader';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
