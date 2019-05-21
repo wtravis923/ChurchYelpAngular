@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { LeaderService } from 'src/app/services/leader.service';
-import { Leader } from 'src/app/models/leader';
+import { Leader } from 'src/app/models/Leader';
 
 @Component({
   selector: 'app-leader-detail',
