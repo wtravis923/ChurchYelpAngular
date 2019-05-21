@@ -1,5 +1,5 @@
 export interface Leader {
-    LeaderID?: number;
+    LeaderId?: number;
     LeaderName: string;
     SpeakingAbilityRating?: number;
     EngagingRating?: number;
