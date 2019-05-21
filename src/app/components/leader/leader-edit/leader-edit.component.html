@@ -2,20 +2,21 @@
 <hr>
 
 <div *ngIf="leader">
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editLeaderForm">
-<div>
-  <div hidden>
-  <mat-form-field>
-    <input matInput placeholder="LeaderID" type="LeaderID" required [value]="leader.LeaderID"/>
-  </mat-form-field>
+  <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="editLeaderForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="LeaderID" type="LeaderID" required [value]="leader.LeaderID" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="LeaderName" formControlName="LeaderName" type="LeaderName" required
+            [value]="leader.LeaderName" />
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button class="nav-btn" type="submit">Save</button>
+    <button mat-raised-button class="nav-btn" routerLink="/leader">Cancel</button>
+  </form>
 </div>
-<div>
-    <mat-form-field>
-      <input matInput placeholder="LeaderName" formControlName="LeaderName" type="LeaderName" required [value]="leader.LeaderName"/>
-    </mat-form-field>
-  </div>
-</div>
-<button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
-</form>
-</div>
-<a mat-button routerLink="/leader">Back to List</a>

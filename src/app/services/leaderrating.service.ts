@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LeaderRating } from '../models/leaderrating';
 import { APIURL } from '../../environments/environment.prod';
 
-
 const ApiUrl = 'https://churchyelpapi.azurewebsites.net/api';
 
 @Injectable()

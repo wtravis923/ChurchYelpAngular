@@ -45,6 +45,7 @@ import { LeaderratingDetailComponent } from './components/leaderrating/leaderrat
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
 import { AuthGuard} from './guards/auth.guard';
 import { APIURL } from '../environments/environment.prod'
+import { LeaderRatingDeleteComponent } from './components/leaderrating/leaderrating-delete/leaderrating-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -57,12 +58,11 @@ const routes = [
     ]
   },
   {
-
     path: 'leader', children: [
       { path: '', component: LeaderListItemComponent },
       { path: 'create', component: LeaderCreateComponent },
       { path: 'detail/:id', component: LeaderDetailComponent },
-      { path: 'delete/:id', canActivate: [RolegaurdGaurd], component: LeaderDeleteComponent },
+      { path: 'delete/:id', component: LeaderDeleteComponent },
       { path: 'edit/:id', component: LeaderEditComponent },
     ]
   },
@@ -71,7 +71,7 @@ const routes = [
       { path: '', component: ChurchListItemComponent },
       { path: 'create', component: ChurchCreateComponent },
       { path: 'detail/:id', component: ChurchDetailComponent },
-      { path: 'delete/:id',canActivate: [RolegaurdGaurd], component: ChurchDeleteComponent },
+      { path: 'delete/:id', component: ChurchDeleteComponent },
       { path: 'edit/:id', component: ChurchEditComponent },
     ]
   },
@@ -79,7 +79,6 @@ const routes = [
     path: 'churchrating', children: [
       { path: '', component: ChurchRatingIndexComponent },
       { path: 'create', component: ChurchRatingCreateComponent }
-
     ]
   },
   { path: '**', component: HomeComponent },
@@ -104,6 +103,7 @@ const routes = [
     LeaderratingCreateComponent,
     LeaderratingDetailComponent,
     LeaderRatingEditComponent,
+    LeaderRatingDeleteComponent,
     ChurchRatingCreateComponent,
     LeaderratingIndexComponent,
     ChurchRatingIndexComponent,

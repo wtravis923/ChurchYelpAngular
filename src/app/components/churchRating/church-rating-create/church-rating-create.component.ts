@@ -40,7 +40,7 @@ export class ChurchRatingCreateComponent implements OnInit {
 }
 
 export class SliderFormattingExample {
-  formatLabel(value: number | null) {
+  formatLabel(value: number | 'auto') {
     if (!value) {
       return 0;
     }

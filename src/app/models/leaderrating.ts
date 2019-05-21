@@ -6,5 +6,4 @@ export interface LeaderRating {
     EngagingRating?: number;
     AuthenticRating?: number;
     RapportRating?: number;
-
 }
