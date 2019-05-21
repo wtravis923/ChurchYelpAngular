@@ -15,9 +15,12 @@
             <div>
                 <h3>Speaking Ability</h3>
                 <h6>How well did the leader communicate?</h6>
-                <mat-slider matInput thumbLabel="true" [displayWith]="SpeakingAbilityRating"
+                <mat-form-field>
+                    <input matInput placeholder="Speaking Ability" formControlName="SpeakingAbilityRating" type="SpeakingAbilityRating" min="1" max="5">
+                </mat-form-field>
+                <!-- <mat-slider matInput thumbLabel="true" [displayWith]="SpeakingAbilityRating"
                     formControlName="SpeakingAbilityRating" type="SpeakingAbilityRating" min="1" max="5">
-                </mat-slider>
+                </mat-slider> -->
             </div>
             <div>
                 <h3>Engagement</h3>
