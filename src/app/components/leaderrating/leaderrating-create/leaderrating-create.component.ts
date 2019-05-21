@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { LeaderratingService } from 'src/app/services/leaderrating.service';
 import { Router } from '@angular/router';
 import { LeaderService } from 'src/app/services/leader.service';
-import { Leader } from 'src/app/models/leader'
+import { Leader } from 'src/app/models/Leader'
 
 @Component({
   selector: 'app-leaderrating-create',

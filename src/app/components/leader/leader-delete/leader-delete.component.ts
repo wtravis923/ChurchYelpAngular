@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaderService } from 'src/app/services/leader.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import {Leader} from 'src/app/models/leader';
+import {Leader} from 'src/app/models/Leader';
 
 
 @Component({
