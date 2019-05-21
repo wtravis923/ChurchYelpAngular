@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Leader } from 'src/app/models/leader';
+import { Leader } from 'src/app/models/Leader';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { LeaderService } from 'src/app/services/leader.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LeaderEditComponent implements OnInit {
 
-  leader:Leader;
+  leader: Leader;
 
 editLeaderForm: FormGroup;
 
