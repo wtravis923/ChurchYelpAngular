@@ -43,9 +43,9 @@ import { LeaderratingIndexComponent } from './components/leaderrating/leaderrati
 import { LeaderratingCreateComponent } from './components/leaderrating/leaderrating-create/leaderrating-create.component';
 import { LeaderratingDetailComponent } from './components/leaderrating/leaderrating-detail/leaderrating-detail.component';
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
+import { LeaderRatingDeleteComponent } from './components/leaderrating/leaderrating-delete/leaderrating-delete.component';
 import { AuthGuard} from './guards/auth.guard';
 import { APIURL } from '../environments/environment.prod'
-import { LeaderRatingDeleteComponent } from './components/leaderrating/leaderrating-delete/leaderrating-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -117,6 +117,7 @@ const routes = [
     RouterModule.forRoot(routes),
     RouterModule,
     ReactiveFormsModule,
+    MatCardModule,
     MatSliderModule,
     MatSlideToggleModule,
     MatToolbarModule,
@@ -126,7 +127,6 @@ const routes = [
     MatTableModule,
     HttpClientModule,
     MatSelectModule,
-    MatCardModule,
   ],
   providers: [
     AuthService,
