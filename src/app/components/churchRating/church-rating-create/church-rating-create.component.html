@@ -11,43 +11,43 @@
       </mat-form-field>
     </div>
     <div>
-      <div>
-        <h3>Community Involvement</h3>
-        <h6>How involved is this church in the local community?</h6>
-        <mat-slider matInput thumbLabel="true" [displayWith]="CommunityInvolvementRating"
+      <h3>Community Involvement</h3>
+      <h6>How involved is this church in the local community?</h6>
+      <mat-form-field><input matInput placeholder="(input 1-5)" formControlName="CommunityInvolvementRating"
+          type="CommunityInvolvementRating" min="1" max="5"></mat-form-field>
+      <!-- <mat-slider matInput thumbLabel="true" [displayWith]="CommunityInvolvementRating"
           formControlName="CommunityInvolvementRating" type="CommunityInvolvementRating" min="1" max="5">
-        </mat-slider>
-      </div>
-      <div>
-        <h3>Friendliness</h3>
-        <h6>How friendly is the church?</h6>
-        <mat-slider matInput thumbLabel="true" [displayWith]="FriendlyRating" formControlName="FriendlyRating"
-          type="FriendlyRating" min="1" max="5">
-        </mat-slider>
-      </div>
-      <div>
-        <h3>Facility</h3>
-        <h6>How would you rate the church facilities?</h6>
-        <mat-slider matInput thumbLabel [displayWith]="FacilityRating" formControlName="FacilityRating"
-          type="FacilityRating" min="1" max="5">
-        </mat-slider>
-      </div>
-      <div>
-        <h3>Music</h3>
-        <h6>How would you rate the church's music?</h6>
-        <mat-slider matInput thumbLabel [displayWith]="MusicRating" formControlName="MusicRating" type="MusicRating"
-          min="1" max="5">
-        </mat-slider>
-      </div>
-      <div>
-        <h3>Message</h3>
-        <h6>Did you find the message to be engaging and relevant?</h6>
-        <mat-slider matInput thumbLabel [displayWith]="MessageRating" formControlName="MessageRating"
-          type="MessageRating" min="1" max="5">
-        </mat-slider>
-      </div>
+        </mat-slider> -->
+      <h3>Friendliness</h3>
+      <h6>How friendly is the church?</h6>
+      <mat-form-field><input matInput placeholder="(input 1-5)" formControlName="FriendlyRating"
+        type="FriendlyRating" min="1" max="5"></mat-form-field>
+      <!-- <mat-slider matInput thumbLabel="true" [displayWith]="FriendlyRating" formControlName="FriendlyRating"
+        type="FriendlyRating" min="1" max="5">
+      </mat-slider> -->
+      <h3>Facility</h3>
+      <h6>How would you rate the church facilities?</h6>
+      <mat-form-field><input matInput placeholder="(input 1-5)" formControlName="FacilityRating"
+        type="FacilityRating" min="1" max="5"></mat-form-field>
+      <!-- <mat-slider matInput thumbLabel [displayWith]="FacilityRating" formControlName="FacilityRating"
+        type="FacilityRating" min="1" max="5">
+      </mat-slider> -->
+      <h3>Music</h3>
+      <h6>How would you rate the church's music?</h6>
+      <mat-form-field><input matInput placeholder="(input 1-5)" formControlName="MusicRating"
+        type="MusicRating" min="1" max="5"></mat-form-field>
+      <!-- <mat-slider matInput thumbLabel [displayWith]="MusicRating" formControlName="MusicRating" type="MusicRating"
+        min="1" max="5">
+      </mat-slider> -->
+      <h3>Message</h3>
+      <h6>Did you find the message to be engaging and relevant?</h6>
+      <mat-form-field><input matInput placeholder="(input 1-5)" formControlName="MessageRating"
+        type="MessageRating" min="1" max="5"></mat-form-field>
+      <!-- <mat-slider matInput thumbLabel [displayWith]="MessageRating" formControlName="MessageRating" type="MessageRating"
+        min="1" max="5">
+      </mat-slider> -->
+      <button mat-raised-button class="nav-btn" type="submit">Submit</button>
+      <button mat-raised-button class="nav-btn" routerLink="/church">Back</button>
     </div>
-    <button mat-raised-button class="nav-btn" type="submit">Submit</button>
-    <button mat-raised-button class="nav-btn" routerLink="/church">Back</button>
   </div>
 </form>
