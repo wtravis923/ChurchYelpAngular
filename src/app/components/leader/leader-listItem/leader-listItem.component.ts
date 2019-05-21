@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaderService } from 'src/app/services/leader.service';
-import { Leader } from '../../../models/Leader';
+import { Leader } from '../../../models/leader';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
@@ -17,6 +17,6 @@ export class LeaderListItemComponent implements OnInit {
      this.dataSource = new MatTableDataSource<Leader>(leader);
     });
   }
-columnNames = ['LeaderID', 'LeaderName','SpeakingAbilityRating','EngagingRating', 'AuthenticRating','RapportRating', 'buttons',];
+columnNames = ['LeaderName','SpeakingAbilityRating','EngagingRating', 'AuthenticRating','RapportRating', 'buttons',];
 dataSource: MatTableDataSource<Leader>
 }

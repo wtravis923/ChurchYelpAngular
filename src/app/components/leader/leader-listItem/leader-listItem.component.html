@@ -1,5 +1,6 @@
-<h1>Index</h1>
-<a mat-raised-button color="primary" routerLink="/leader/create">Create New</a>
+<h1>Leaders</h1>
+<a routerLink="/leader/create" routerLinkActive="active"><button mat-raised-button class="nav-btn" color="primary"
+  type="submit">Add a Leader</button></a>
 <hr>
 
 <div>
@@ -7,37 +8,26 @@
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
   
-
-  <ng-container matColumnDef="LeaderID">
-    <mat-header-cell *matHeaderCellDef> Leader ID</mat-header-cell>
-    <mat-cell *matCellDef="let leader">{{leader.LeaderID}}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="details">
-    <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-    <mat-cell *matCellDef="let leader"><i class="materical-icons">library_books</i></mat-cell>
-  </ng-container>
-
   <ng-container matColumnDef="LeaderName">
     <mat-header-cell *matHeaderCellDef>Leader Name</mat-header-cell>
-  <mat-cell *matCellDef="let Leader">{{Leader.LeaderName}}</mat-cell>
+    <mat-cell *matCellDef="let Leader">{{Leader.LeaderName}}</mat-cell>
   </ng-container>
-
+  
   <ng-container matColumnDef="SpeakingAbilityRating">
     <mat-header-cell *matHeaderCellDef>Speaking Ability</mat-header-cell>
     <mat-cell *matCellDef="let leader">{{leader.SpeakingAbilityRating}}</mat-cell>
   </ng-container>
-
+  
   <ng-container matColumnDef="EngagingRating">
     <mat-header-cell *matHeaderCellDef>Ability to Engage</mat-header-cell>
     <mat-cell *matCellDef="let leader">{{leader.EngagingRating}}</mat-cell>
   </ng-container>
-
+  
   <ng-container matColumnDef="AuthenticRating">
     <mat-header-cell *matHeaderCellDef>Is he/she Authentic?</mat-header-cell>
     <mat-cell *matCellDef="let leader">{{leader.AuthenticRating}}</mat-cell>
   </ng-container>
-
+  
   <ng-container matColumnDef="RapportRating">
     <mat-header-cell *matHeaderCellDef>Rapport of leader</mat-header-cell>
     <mat-cell *matCellDef="let leader">{{leader.RapportRating}}</mat-cell>
@@ -48,9 +38,9 @@
     <mat-cell *matCellDef="let leader">
       <i mat-icon class="material-icons" routerLink="/leader/edit/{{leader.LeaderID}}">edit</i>
       <i class="material-icons" routerLink="/leader/delete/{{leader.LeaderID}}">delete</i>
-      <i routerLink="/leader/detail/{{leader.LeaderID" class="material-icons">library_books</i>
-      <i routerLink="/leaderRating/create" class="material-icons">star_half</i>
+      <i routerLink="/leader/detail/{{leader.LeaderID}}" class="material-icons">library_books</i>
+      <i routerLink="/leaderrating/create" class="material-icons">star_half</i>
     </mat-cell>
   </ng-container> 
- </mat-table>
+</mat-table>
 </div>

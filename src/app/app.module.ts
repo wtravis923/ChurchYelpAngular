@@ -45,6 +45,7 @@ import { LeaderratingDetailComponent } from './components/leaderrating/leaderrat
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
 import { AuthGuard} from './guards/auth.guard';
 import { APIURL } from '../environments/environment.prod'
+import { LeaderRatingDeleteComponent } from './components/leaderrating/leaderrating-delete/leaderrating-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -57,7 +58,6 @@ const routes = [
     ]
   },
   {
-
     path: 'leader', children: [
       { path: '', component: LeaderListItemComponent },
       { path: 'create', component: LeaderCreateComponent },
@@ -79,7 +79,6 @@ const routes = [
     path: 'churchrating', children: [
       { path: '', component: ChurchRatingIndexComponent },
       { path: 'create', component: ChurchRatingCreateComponent }
-
     ]
   },
   { path: '**', component: HomeComponent },
@@ -104,6 +103,7 @@ const routes = [
     LeaderratingCreateComponent,
     LeaderratingDetailComponent,
     LeaderRatingEditComponent,
+    LeaderRatingDeleteComponent,
     ChurchRatingCreateComponent,
     LeaderratingIndexComponent,
     ChurchRatingIndexComponent,
