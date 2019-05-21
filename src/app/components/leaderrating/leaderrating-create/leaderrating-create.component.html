@@ -1,1 +1,47 @@
-<a mat-button routerLink="/leaderrating">Back to List</a>
+<h1>Rate a Leader</h1>
+<hr>
+
+<form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="leaderratingForm">
+    <div>
+        <div>
+            <mat-form-field>
+                <mat-select placeholder="Select a Leader" formControlName="LeaderId" required>
+                    <mat-option *ngFor="let leaderId of leaders" [value]="leaderId.LeaderId">{{leaderId.LeaderName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <div>
+                <h3>Speaking Ability</h3>
+                <h6>How well did the leader communicate?</h6>
+                <mat-slider matInput thumbLabel="true" [displayWith]="SpeakingAbilityRating"
+                    formControlName="SpeakingAbilityRating" type="SpeakingAbilityRating" min="1" max="5">
+                </mat-slider>
+            </div>
+            <div>
+                <h3>Engagement</h3>
+                <h6>Did the leader keep the crowd engaged?</h6>
+                <mat-slider matInput thumbLabel="true" [displayWith]="EngagingRating" formControlName="EngagingRating"
+                    type="EngagingRating" min="1" max="5">
+                </mat-slider>
+            </div>
+            <div>
+                <h3>Authenticity</h3>
+                <h6>How geniune did the leader come across?</h6>
+                <mat-slider matInput thumbLabel [displayWith]="AuthenticRating" formControlName="AuthenticRating"
+                    type="AuthenticRating" min="1" max="5">
+                </mat-slider>
+            </div>
+            <div>
+                <h3>Rapport</h3>
+                <h6>Did the leader seem to have good rapport with the congregants?</h6>
+                <mat-slider matInput thumbLabel [displayWith]="RapportRating" formControlName="RapportRating"
+                    type="RapportRating" min="1" max="5">
+                </mat-slider>
+            </div>
+        </div>
+        <button mat-raised-button class="nav-btn" type="submit">Submit</button>
+        <button mat-raised-button class="nav-btn" routerLink="/leader">Back</button>
+    </div>
+</form>

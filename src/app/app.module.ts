@@ -58,7 +58,6 @@ const routes = [
     ]
   },
   {
-
     path: 'leader', children: [
       { path: '', component: LeaderListItemComponent },
       { path: 'create', component: LeaderCreateComponent },
@@ -80,7 +79,6 @@ const routes = [
     path: 'churchrating', children: [
       { path: '', component: ChurchRatingIndexComponent },
       { path: 'create', component: ChurchRatingCreateComponent }
-
     ]
   },
   { path: '**', component: HomeComponent },
