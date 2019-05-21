@@ -12,14 +12,31 @@
             </mat-form-field>
         </div>
         <div>
-            <div>
-                <h3>Speaking Ability</h3>
-                <h6>How well did the leader communicate?</h6>
-                <mat-slider matInput thumbLabel="true" [displayWith]="SpeakingAbilityRating"
+            <h3>Speaking Ability</h3>
+            <h6>How well did the leader communicate?</h6>
+            <mat-form-field><input matInput placeholder="(input 1-5)" formControlName="SpeakingAbilityRating"
+                    type="SpeakingAbilityRating" min="1" max="5">
+            </mat-form-field>
+            <h3>Engagement</h3>
+            <h6>Did the leader keep the crowd engaged?</h6>
+                    <mat-form-field>
+                <input matInput formControlName="EngagingRating" type="EngagingRating" min="1" max="5">
+            </mat-form-field>
+            <h3>Authenticity</h3>
+            <h6>How geniune did the leader come across?</h6>
+                <mat-form-field>
+                <input matInput formControlName="AuthenticRating" type="AuthenticRating" min="1" max="5">
+            </mat-form-field>
+            <h3>Rapport</h3>
+            <h6>Did the leader seem to have good rapport with the congregants?</h6>
+                    <mat-form-field>
+                <input matInput formControlName="RapportRating" type="RapportRating" min="1" max="5">
+            </mat-form-field>
+        </div>
+        <!-- <mat-slider matInput thumbLabel="true" [displayWith]="SpeakingAbilityRating"
                     formControlName="SpeakingAbilityRating" type="SpeakingAbilityRating" min="1" max="5">
-                </mat-slider>
-            </div>
-            <div>
+                </mat-slider> -->
+        <!-- <div>
                 <h3>Engagement</h3>
                 <h6>Did the leader keep the crowd engaged?</h6>
                 <mat-slider matInput thumbLabel="true" [displayWith]="EngagingRating" formControlName="EngagingRating"
@@ -39,8 +56,7 @@
                 <mat-slider matInput thumbLabel [displayWith]="RapportRating" formControlName="RapportRating"
                     type="RapportRating" min="1" max="5">
                 </mat-slider>
-            </div>
-        </div>
+            </div> -->
         <button mat-raised-button class="nav-btn" type="submit">Submit</button>
         <button mat-raised-button class="nav-btn" routerLink="/leader">Back</button>
     </div>
