@@ -11,12 +11,21 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class ChurchListItemComponent implements OnInit {
 
+  isAdmin: boolean;
+
   constructor(private _churchService: ChurchService) { }
 
   ngOnInit() {
     this. _churchService.getChurches().subscribe((church: Church[]) => {
       this.dataSource = new MatTableDataSource<Church>(church);
     });
+
+    if(localStorage.getItem('userRole')=="Admin"){
+      this.isAdmin = true;
+    }
+    else {
+      this.isAdmin = false;
+    }
   }
   columnNames =['ChurchName', 'ChurchCity', 'ChurchState', 'FriendlyRating', 'CommunityInvolvementRating', 'FacilityRating', 'MusicRating', 'MessageRating', 'buttons'];
   dataSource: MatTableDataSource<Church>
