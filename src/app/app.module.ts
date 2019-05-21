@@ -62,7 +62,7 @@ const routes = [
       { path: '', component: LeaderListItemComponent },
       { path: 'create', component: LeaderCreateComponent },
       { path: 'detail/:id', component: LeaderDetailComponent },
-      { path: 'delete/:id', component: LeaderDeleteComponent },
+      { path: 'delete/:id', canActivate: [RolegaurdGaurd], component: LeaderDeleteComponent },
       { path: 'edit/:id', component: LeaderEditComponent },
     ]
   },
@@ -71,7 +71,7 @@ const routes = [
       { path: '', component: ChurchListItemComponent },
       { path: 'create', component: ChurchCreateComponent },
       { path: 'detail/:id', component: ChurchDetailComponent },
-      { path: 'delete/:id', component: ChurchDeleteComponent },
+      { path: 'delete/:id',canActivate: [RolegaurdGaurd], component: ChurchDeleteComponent },
       { path: 'edit/:id', component: ChurchEditComponent },
     ]
   },
