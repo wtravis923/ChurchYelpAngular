@@ -1,0 +1,23 @@
+
+  <div class="container login">
+    <mat-card class="logincard">
+      <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="login">
+        <div>
+          <mat-card-title>Login</mat-card-title>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder="Email" formControlName="email" type="email" required />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder="Password" formControlName="password" type="password" required />
+            </mat-form-field>
+          </div>
+        </div>
+        <button mat-raised-button class="nav-btn" color="primary" type="submit">Login</button>
+      </form>
+      <br>
+      <a routerLink="/register">Register as a new user</a>
+    </mat-card>
+  </div>

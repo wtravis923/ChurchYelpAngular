@@ -1,0 +1,36 @@
+<h1>Edit a Church</h1>
+<hr>
+
+<div *ngIf="church">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editChurchForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="ChurchID" type="ChurchID" required [value]="church.ChurchID" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Church Name" formControlName="ChurchName" type="ChurchName" required
+            [value]="church.ChurchName" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="City" formControlName="ChurchCity" type="ChurchCity" required
+            [value]="church.ChurchCity" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="State" formControlName="ChurchState" type="ChurchState" required
+            [value]="church.ChurchState" />
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button class="nav-btn" type="submit">Save</button>
+  </form>
+</div>
+
+<a mat-button routerLink="/church">Back to List</a>
+
