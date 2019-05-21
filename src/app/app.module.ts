@@ -44,7 +44,6 @@ import { LeaderratingCreateComponent } from './components/leaderrating/leaderrat
 import { LeaderratingDetailComponent } from './components/leaderrating/leaderrating-detail/leaderrating-detail.component';
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
 import { LeaderRatingDeleteComponent } from './components/leaderrating/leaderrating-delete/leaderrating-delete.component';
-import { IsAdminComponent } from './models/is-admin/is-admin.component';
 // import { AuthGuard} from './guards/auth.guard';
 // import { APIURL } from '../environments/environment.prod'
 
@@ -108,8 +107,7 @@ const routes = [
     ChurchRatingCreateComponent,
     LeaderratingIndexComponent,
     ChurchRatingIndexComponent,
-    LogoutComponent,
-    IsAdminComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
