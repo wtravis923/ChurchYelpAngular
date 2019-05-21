@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Leader } from 'src/app/models/Leader';
+import { Leader } from '../../../models/Leader';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { LeaderService } from 'src/app/services/leader.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,7 +14,7 @@ export class LeaderEditComponent implements OnInit {
 
   leader: Leader;
 
-editLeaderForm: FormGroup;
+  editLeaderForm: FormGroup;
 
   constructor(private _form:FormBuilder,
     private _leaderService: LeaderService,
@@ -23,7 +23,8 @@ editLeaderForm: FormGroup;
     ) {
     this._ar.paramMap.subscribe(p => {
         this._leaderService.getLeader(p.get('id')).subscribe((singleLeader: Leader) => {
-          this.leader= singleLeader;
+          this.leader = singleLeader;
+          console.log(this.leader);
           this.createForm();
         });
       });
@@ -35,8 +36,7 @@ editLeaderForm: FormGroup;
   createForm() {
     this.editLeaderForm = this._form.group({
       LeaderID: new FormControl(this.leader.LeaderID),
-    LeaderName: new FormControl(this.leader.LeaderName),
-
+      LeaderName: new FormControl(this.leader.LeaderName)
   });
   }
 

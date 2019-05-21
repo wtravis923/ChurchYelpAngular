@@ -53,7 +53,7 @@
         <mat-header-cell *matHeaderCellDef></mat-header-cell>
         <mat-cell *matCellDef="let church">
           <i mat-icon class="material-icons" routerLink="edit/{{church.ChurchID}}">edit</i>
-          <i *ngif="isAdmin" class="material-icons" routerLink="/church/delete/{{church.ChurchID}}">delete</i>
+          <i class="material-icons" routerLink="/church/delete/{{church.ChurchID}}">delete</i>
           <i routerLink="/church/detail/{{church.ChurchID}}" class="material-icons">library_books</i>
           <i routerLink="/churchrating/create" class="material-icons">star_half</i>
         </mat-cell>
