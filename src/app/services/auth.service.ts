@@ -5,6 +5,7 @@ import { Token } from '../models/Token';
 import { Router, RouterLink } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { isAdmin } from '../models/isAdmin';
+import { UserInfo } from '../models/UserInfo';
 
 
 const Api_Url = 'https://churchyelpapi.azurewebsites.net'
@@ -54,6 +55,10 @@ export class AuthService {
 
   setCurrentUser() {
     this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() })
+    .subscribe((userRole: UserInfo) => {
+      localStorage.setItem('user_role', userRole.Role);
+      
+    })
   }
 
   logout() {

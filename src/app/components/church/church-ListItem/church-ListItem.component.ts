@@ -21,7 +21,7 @@ export class ChurchListItemComponent implements OnInit {
 
     });
 
-    if (localStorage.getItem('userRole') == "Admin") {
+    if (localStorage.getItem('user_role') == "Admin") {
     this.isAdmin = true; 
     }
     else {

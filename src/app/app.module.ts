@@ -43,6 +43,7 @@ import { LeaderratingIndexComponent } from './components/leaderrating/leaderrati
 import { LeaderratingCreateComponent } from './components/leaderrating/leaderrating-create/leaderrating-create.component';
 import { LeaderratingDetailComponent } from './components/leaderrating/leaderrating-detail/leaderrating-detail.component';
 import { LeaderRatingEditComponent } from './components/leaderrating/leaderrating-edit/leaderrating-edit.component';
+import { AuthGuard } from './services/authguard.service';
 
 
 const routes = [
@@ -135,7 +136,9 @@ const routes = [
     ChurchRatingsService,
     LeaderService,
     LeaderratingService,
-    ChurchDetailComponent
+    ChurchDetailComponent,
+    AuthGuard
+    
   ],
   bootstrap: [AppComponent]
 })
